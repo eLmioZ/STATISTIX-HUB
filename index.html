@@ -277,15 +277,12 @@
                         <i data-lucide="award" class="w-6 h-6"></i>
                     </div>
 
-                    <!-- Nama, Tahun & Tajuk Paparan Aktif -->
+                    <!-- Nama & Tajuk Paparan Aktif -->
                     <div class="min-w-0">
                         <div class="flex items-center gap-2 flex-wrap">
                             <h1 id="header-tournament-name" class="font-display font-bold text-sm sm:text-base text-navy-900 dark:text-white truncate">
                                 STATISTIX HUB
                             </h1>
-                            <span id="header-tournament-year" class="px-2 py-0.5 text-[11px] font-bold rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                                ----
-                            </span>
                         </div>
                         <div class="flex items-center gap-2 mt-0.5">
                             <span id="header-view-indicator" class="w-2 h-2 rounded-full bg-royal"></span>
@@ -4431,14 +4428,9 @@
             function syncHeaderFromStorage() {
                 const settings = safeReadJson(STORAGE_KEYS.SETTINGS, {});
                 const nameEl = document.getElementById('header-tournament-name');
-                const yearEl = document.getElementById('header-tournament-year');
 
                 if (nameEl && settings && typeof settings.tournamentName === 'string' && settings.tournamentName.trim() !== '' && settings.tournamentName.trim().toUpperCase() !== 'ATHLETICS CHAMPIONSHIP MANAGER') {
                     nameEl.textContent = settings.tournamentName.trim();
-                }
-                if (yearEl) {
-                    const yr = settings && settings.year ? String(settings.year).trim() : '';
-                    yearEl.textContent = yr !== '' ? yr : '----';
                 }
             }
 
