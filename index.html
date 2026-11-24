@@ -1025,10 +1025,16 @@
                             </div>
                             <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight">Panel Admin</h2>
                         </div>
-                        <button type="button" id="btn-admin-pengurusan-acara" aria-expanded="true" class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-cyan text-navy-950 text-xs sm:text-sm font-display font-extrabold shadow-md shadow-cyan/25 hover:bg-cyan/90 transition-all">
-                            <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
-                            <span>Pengurusan Acara</span>
-                        </button>
+                        <div class="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
+                            <button type="button" id="btn-admin-pengurusan-acara" aria-expanded="true" class="inline-flex items-center justify-center gap-2.5 px-4 py-2.5 rounded-xl bg-cyan text-navy-950 text-xs sm:text-sm font-display font-extrabold shadow-md shadow-cyan/25 hover:bg-cyan/90 transition-all">
+                                <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
+                                <span>Pengurusan Acara</span>
+                            </button>
+                            <button type="button" id="btn-user-management" disabled aria-disabled="true" class="inline-flex items-center justify-center gap-2.5 px-4 py-2.5 rounded-xl bg-slate-800/90 text-cyan border border-cyan/40 text-xs sm:text-sm font-display font-extrabold shadow-md shadow-navy-950/30 opacity-85 cursor-not-allowed transition-all">
+                                <i data-lucide="users" class="w-4 h-4"></i>
+                                <span>Pengurusan Pengguna</span>
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Panel Konfigurasi Google Apps Script -->
