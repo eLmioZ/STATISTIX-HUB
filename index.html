@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STATISTIX HUB — Sistem Pengurusan Keputusan Rasmi</title>
+    <title>STATISTIX HUB — Sistem Pengurusan Keputusan Kejohanan Olahraga</title>
     
     <!-- Tipografi Moden: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -198,8 +198,8 @@
                             <i data-lucide="trophy" class="w-5 h-5 text-white"></i>
                         </div>
                         <div class="sidebar-label transition-opacity duration-200 truncate">
-                            <span class="font-display font-extrabold text-sm tracking-wide block text-white leading-tight">STATISTIX HUB</span>
-                            <span class="text-[11px] font-medium text-cyan tracking-wider uppercase">Sistem Keputusan Rasmi</span>
+                            <span class="font-display font-extrabold text-sm tracking-wide block text-white leading-tight">STATISTIX</span>
+                            <span class="text-[11px] font-medium text-cyan tracking-wider uppercase">HUB</span>
                         </div>
                     </div>
                     <!-- Butang Kecilkan Sidebar (Desktop) -->
@@ -960,281 +960,232 @@
                         <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight">Podium Pingat</h2>
                     </div>
 
-                    <!-- Container Kandungan Utama Kosong -->
-                    <div id="container-podium" class="w-full"></div>
+                    <!-- Container Kandungan Utama Podium Pingat -->
+                    <div id="container-podium" class="w-full space-y-5">
+                        <!-- Kad Jadual Pungutan Pingat Keseluruhan -->
+                        <div id="podium-standings-card" class="rounded-2xl bg-white dark:bg-navy-900 border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden">
+                            <!-- Header Jadual -->
+                            <div class="px-5 py-4 sm:px-6 sm:py-5 border-b border-slate-200/80 dark:border-slate-800 bg-gradient-to-r from-amber-50/70 via-white to-slate-50/70 dark:from-amber-950/20 dark:via-navy-900 dark:to-slate-900/60">
+                                <h3 class="font-display text-lg sm:text-xl font-extrabold tracking-tight text-navy-900 dark:text-white">
+                                    Jadual Pungutan Pingat Keseluruhan
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                                    Berdasarkan keputusan acara Akhir Balapan, Relay dan Padang yang telah disahkan rasmi.
+                                </p>
+                                <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+                                    Nota: Jadual pungutan pingat ini adalah berdasarkan status pengesahan rasmi pelayar (browser) semasa dan belum diselaraskan antara peranti.
+                                </p>
+                            </div>
+
+                            <!-- Banner Status Kelengkapan Data & Amaran Integriti -->
+                            <div id="podium-data-notice" class="hidden px-5 py-3 sm:px-6 border-b border-slate-200/80 dark:border-slate-800 text-xs sm:text-sm leading-relaxed"></div>
+
+                            <!-- Jadual Keputusan Pungutan Pingat -->
+                            <div class="w-full overflow-x-auto">
+                                <table id="table-podium-pingat" class="w-full text-left border-collapse">
+                                    <thead class="bg-slate-50/95 dark:bg-slate-800/75 text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 border-b border-slate-200/80 dark:border-slate-800">
+                                        <tr>
+                                            <th scope="col" class="px-4 py-3.5 sm:px-5 text-center whitespace-nowrap w-24">Kedudukan</th>
+                                            <th scope="col" class="px-4 py-3.5 sm:px-5 text-left">Pasukan</th>
+                                            <th scope="col" class="px-4 py-3.5 sm:px-5 text-center whitespace-nowrap w-28">
+                                                <span class="inline-flex items-center justify-center gap-1.5">
+                                                    <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background-color: #FBBF24;"></span>
+                                                    <span>Emas</span>
+                                                </span>
+                                            </th>
+                                            <th scope="col" class="px-4 py-3.5 sm:px-5 text-center whitespace-nowrap w-28">
+                                                <span class="inline-flex items-center justify-center gap-1.5">
+                                                    <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background-color: #CBD5E1;"></span>
+                                                    <span>Perak</span>
+                                                </span>
+                                            </th>
+                                            <th scope="col" class="px-4 py-3.5 sm:px-5 text-center whitespace-nowrap w-28">
+                                                <span class="inline-flex items-center justify-center gap-1.5">
+                                                    <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background-color: #CD7F32;"></span>
+                                                    <span>Gangsa</span>
+                                                </span>
+                                            </th>
+                                            <th scope="col" class="px-4 py-3.5 sm:px-5 text-center whitespace-nowrap w-36 font-extrabold text-navy-900 dark:text-white">Jumlah Pingat</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody-podium-pingat" class="divide-y divide-slate-200/70 dark:divide-slate-800 text-sm text-slate-700 dark:text-slate-200">
+                                        <tr>
+                                            <td colspan="6" class="px-5 py-8 text-center text-sm font-medium text-slate-500 dark:text-slate-400">
+                                                Belum ada keputusan acara yang disahkan rasmi.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- ===================================================================== -->
-                <!-- PAPARAN 6: PANEL ADMIN (Midnight Navy & Royal Blue)                   -->
+                <!-- PAPARAN 6: PANEL ADMIN (Dark Navy & Cyan)                             -->
                 <!-- ===================================================================== -->
                 <section id="view-admin" class="app-view hidden view-transition space-y-6">
                     <!-- Banner Identiti Paparan -->
-                    <div class="rounded-2xl bg-gradient-to-r from-navy-900 to-royal p-6 text-white shadow-lg">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-xs font-semibold mb-2">
-                            <i data-lucide="sliders" class="w-3.5 h-3.5"></i>
-                            <span>Pusat Kawalan Konfigurasi Kejohanan</span>
+                    <div class="rounded-2xl bg-gradient-to-r from-navy-900 via-slate-800 to-navy-900 p-6 text-white border border-slate-700/80 shadow-lg flex flex-wrap items-center justify-between gap-4">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan/15 text-cyan text-xs font-semibold mb-2">
+                                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                                <span>Konfigurasi Integrasi Data Kejohanan</span>
+                            </div>
+                            <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight">Panel Admin</h2>
                         </div>
-                        <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight">Panel Admin</h2>
+                        <button type="button" id="btn-admin-pengurusan-acara" aria-expanded="true" class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-cyan text-navy-950 text-xs sm:text-sm font-display font-extrabold shadow-md shadow-cyan/25 hover:bg-cyan/90 transition-all">
+                            <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
+                            <span>Pengurusan Acara</span>
+                        </button>
                     </div>
 
-                    <!-- Container Kandungan Utama Panel Admin -->
-                    <div id="container-admin" class="w-full space-y-6">
-                        <!-- Bar Kawalan Panel Admin -->
-                        <div class="rounded-2xl bg-white dark:bg-navy-900 border border-slate-200/80 dark:border-slate-800 p-4 sm:p-5 shadow-sm flex flex-wrap items-center justify-between gap-4">
-                            <div class="flex items-center gap-3">
-                                <button type="button" id="btn-admin-pengurusan-acara" aria-expanded="true" class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm font-bold bg-gradient-to-r from-navy-900 to-royal text-white shadow-md shadow-royal/20 hover:opacity-95 transition-all">
-                                    <i data-lucide="clipboard-list" class="w-4 h-4"></i>
-                                    <span>Pengurusan Acara</span>
-                                </button>
-                                <span class="hidden sm:inline-block text-xs text-slate-500 dark:text-slate-400">Integrasi Terus Google Sheets ↔ Google Apps Script</span>
-                            </div>
-                            <div class="text-xs text-slate-500 dark:text-slate-400">
-                                Konfigurasi URL disimpan dalam <strong class="text-slate-700 dark:text-slate-200">LocalStorage</strong> pelayar ini sahaja.
-                            </div>
-                        </div>
-
-                        <!-- Amaran Keselamatan Endpoint Awam -->
-                        <div class="rounded-2xl bg-amber-50/90 dark:bg-amber-950/30 border border-amber-200/90 dark:border-amber-800/60 p-4 sm:p-5 flex items-start gap-3.5">
-                            <div class="w-9 h-9 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="shield-alert" class="w-5 h-5"></i>
-                            </div>
-                            <div class="text-xs sm:text-sm text-amber-900 dark:text-amber-200 space-y-1 leading-relaxed">
-                                <p class="font-bold">Amaran Keselamatan Endpoint Tanpa Autentikasi</p>
-                                <p>Endpoint Google Apps Script (<code class="px-1.5 py-0.5 rounded bg-amber-500/15 font-mono text-xs">/exec</code>) tanpa autentikasi boleh diakses oleh sesiapa yang mengetahui URL tersebut. Gunakan hanya untuk helaian Google Sheets yang diluluskan bagi penggunaan kejohanan ini dan jangan dedahkan maklumat peribadi sensitif atlet melalui endpoint awam tanpa kebenaran sewajarnya.</p>
-                            </div>
-                        </div>
-
-                        <!-- Kontena 4 Kad Konfigurasi Pengurusan Acara (Menegak) -->
-                        <div id="admin-pengurusan-acara-panel" class="space-y-5">
-
-                            <!-- KAD 1: ACARA SARINGAN (Royal Blue & Electric Cyan) -->
-                            <div id="gas-card-saringan" data-gas-module="saringan" class="rounded-2xl bg-white dark:bg-navy-900 border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden">
-                                <div class="px-5 py-4 border-b border-slate-200/80 dark:border-slate-800 bg-gradient-to-r from-blue-50/90 via-white to-cyan-50/60 dark:from-blue-950/35 dark:via-navy-900 dark:to-cyan-950/20 flex flex-wrap items-center justify-between gap-3">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-royal to-cyan text-white flex items-center justify-center shrink-0 shadow-sm shadow-royal/25">
-                                            <i data-lucide="timer" class="w-5 h-5"></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-display text-base sm:text-lg font-extrabold tracking-wide text-navy-900 dark:text-white uppercase">ACARA SARINGAN</h3>
-                                            <p class="text-xs text-slate-500 dark:text-slate-400">Tab: 101, 102, 103, 104, 105, 106, 204, 205, 300</p>
-                                        </div>
+                    <!-- Panel Konfigurasi Google Apps Script -->
+                    <div id="admin-pengurusan-acara-panel" class="space-y-5">
+                        <div class="grid grid-cols-1 xl:grid-cols-2 gap-5">
+                            <!-- Kad Modul 1: ACARA SARINGAN -->
+                            <div class="rounded-2xl bg-white dark:bg-navy-900 border border-slate-200/80 dark:border-slate-800 p-5 sm:p-6 shadow-sm space-y-4">
+                                <div class="flex flex-wrap items-start justify-between gap-3">
+                                    <div>
+                                        <span class="text-[11px] font-bold uppercase tracking-wider text-royal dark:text-cyan">Modul 01</span>
+                                        <h3 class="font-display text-lg font-extrabold text-navy-900 dark:text-white">ACARA SARINGAN</h3>
                                     </div>
-                                    <button type="button" data-gas-code-btn="saringan" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-royal/10 text-royal dark:bg-cyan/15 dark:text-cyan border border-royal/20 dark:border-cyan/30 hover:bg-royal hover:text-white dark:hover:bg-cyan dark:hover:text-navy-950 transition-all">
-                                        <i data-lucide="code-2" class="w-4 h-4"></i>
+                                    <button type="button" data-gas-code-btn="saringan" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-navy-900 dark:text-cyan border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+                                        <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
                                         <span>KOD GAS</span>
                                     </button>
                                 </div>
-                                <div class="p-5 space-y-4">
-                                    <div>
-                                        <label for="gas-url-saringan" class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5">URL Google Apps Script</label>
-                                        <input type="url" id="gas-url-saringan" data-gas-input="saringan" placeholder="https://script.google.com/macros/s/.../exec" autocomplete="off" spellcheck="false" class="w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-royal focus:border-royal disabled:opacity-65 disabled:bg-slate-100 dark:disabled:bg-slate-900/80 transition-all" />
+
+                                <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
+                                    <div class="flex items-center gap-2">
+                                        <span id="gas-conn-dot-saringan" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                                        <span id="gas-conn-status-saringan" class="font-semibold text-slate-700 dark:text-slate-200">Belum disambungkan</span>
                                     </div>
-                                    <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
-                                        <div class="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-xs">
-                                            <div class="flex items-center gap-2">
-                                                <span id="gas-conn-dot-saringan" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
-                                                <span class="text-slate-500 dark:text-slate-400">Status:</span>
-                                                <strong id="gas-conn-status-saringan" class="font-semibold text-slate-700 dark:text-slate-200">Belum disambungkan</strong>
-                                            </div>
-                                            <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
-                                                <i data-lucide="clock" class="w-3.5 h-3.5"></i>
-                                                <span>Bacaan berjaya terakhir: <strong id="gas-last-read-saringan" class="font-semibold text-slate-700 dark:text-slate-200">—</strong></span>
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap items-center gap-2">
-                                            <button type="button" id="btn-gas-test-saringan" data-gas-action="test" data-gas-module="saringan" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-royal/30 text-royal dark:text-cyan bg-royal/5 hover:bg-royal/15 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="wifi" class="w-3.5 h-3.5"></i>
-                                                <span>Uji</span>
-                                            </button>
-                                            <button type="button" id="btn-gas-save-saringan" data-gas-action="save" data-gas-module="saringan" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-royal text-white shadow-sm shadow-royal/20 hover:bg-royal/90 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="save" class="w-3.5 h-3.5"></i>
-                                                <span>Simpan</span>
-                                            </button>
-                                            <button type="button" id="btn-gas-edit-saringan" data-gas-action="edit" data-gas-module="saringan" disabled class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="pencil" class="w-3.5 h-3.5"></i>
-                                                <span>Edit</span>
-                                            </button>
-                                            <button type="button" id="btn-gas-delete-saringan" data-gas-action="delete" data-gas-module="saringan" disabled class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-rose-200 dark:border-rose-800/60 bg-rose-50/70 dark:bg-rose-950/30 text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-950/60 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
-                                                <span>Hapus</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div id="gas-feedback-saringan" class="hidden rounded-xl px-3.5 py-2.5 text-xs border"></div>
+                                    <div>Bacaan terakhir: <strong id="gas-last-read-saringan" class="text-slate-700 dark:text-slate-200">—</strong></div>
                                 </div>
+
+                                <div>
+                                    <label for="gas-url-saringan" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">URL Web App Google Apps Script (/exec)</label>
+                                    <input type="url" id="gas-url-saringan" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-3.5 py-2.5 rounded-xl text-xs sm:text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-royal disabled:opacity-60">
+                                </div>
+
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <button type="button" id="btn-gas-test-saringan" data-gas-action="test" data-gas-module="saringan" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all disabled:opacity-45">Uji</button>
+                                    <button type="button" id="btn-gas-save-saringan" data-gas-action="save" data-gas-module="saringan" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-royal text-white hover:bg-royal/90 transition-all disabled:opacity-45">Simpan</button>
+                                    <button type="button" id="btn-gas-edit-saringan" data-gas-action="edit" data-gas-module="saringan" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-amber-500 text-white hover:bg-amber-600 transition-all disabled:opacity-45">Edit</button>
+                                    <button type="button" id="btn-gas-delete-saringan" data-gas-action="delete" data-gas-module="saringan" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-rose-600 text-white hover:bg-rose-700 transition-all disabled:opacity-45">Hapus</button>
+                                </div>
+
+                                <div id="gas-feedback-saringan" class="hidden"></div>
                             </div>
 
-                            <!-- KAD 2: AKHIR BALAPAN (Emerald Green & Teal) -->
-                            <div id="gas-card-akhir" data-gas-module="akhir" class="rounded-2xl bg-white dark:bg-navy-900 border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden">
-                                <div class="px-5 py-4 border-b border-slate-200/80 dark:border-slate-800 bg-gradient-to-r from-emerald-50/90 via-white to-teal-50/60 dark:from-emerald-950/35 dark:via-navy-900 dark:to-teal-950/20 flex flex-wrap items-center justify-between gap-3">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald to-teal-600 text-white flex items-center justify-center shrink-0 shadow-sm shadow-emerald/25">
-                                            <i data-lucide="flag" class="w-5 h-5"></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-display text-base sm:text-lg font-extrabold tracking-wide text-navy-900 dark:text-white uppercase">AKHIR BALAPAN</h3>
-                                            <p class="text-xs text-slate-500 dark:text-slate-400">Tab: 101, 102, 103, 104, 105, 106, 204, 205, 300</p>
-                                        </div>
+                            <!-- Kad Modul 2: AKHIR BALAPAN -->
+                            <div class="rounded-2xl bg-white dark:bg-navy-900 border border-slate-200/80 dark:border-slate-800 p-5 sm:p-6 shadow-sm space-y-4">
+                                <div class="flex flex-wrap items-start justify-between gap-3">
+                                    <div>
+                                        <span class="text-[11px] font-bold uppercase tracking-wider text-emerald">Modul 02</span>
+                                        <h3 class="font-display text-lg font-extrabold text-navy-900 dark:text-white">AKHIR BALAPAN</h3>
                                     </div>
-                                    <button type="button" data-gas-code-btn="akhir" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald/10 text-emerald dark:text-teal-400 border border-emerald/25 hover:bg-emerald hover:text-white transition-all">
-                                        <i data-lucide="code-2" class="w-4 h-4"></i>
+                                    <button type="button" data-gas-code-btn="akhir" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-navy-900 dark:text-cyan border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+                                        <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
                                         <span>KOD GAS</span>
                                     </button>
                                 </div>
-                                <div class="p-5 space-y-4">
-                                    <div>
-                                        <label for="gas-url-akhir" class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5">URL Google Apps Script</label>
-                                        <input type="url" id="gas-url-akhir" data-gas-input="akhir" placeholder="https://script.google.com/macros/s/.../exec" autocomplete="off" spellcheck="false" class="w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald focus:border-emerald disabled:opacity-65 disabled:bg-slate-100 dark:disabled:bg-slate-900/80 transition-all" />
+
+                                <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
+                                    <div class="flex items-center gap-2">
+                                        <span id="gas-conn-dot-akhir" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                                        <span id="gas-conn-status-akhir" class="font-semibold text-slate-700 dark:text-slate-200">Belum disambungkan</span>
                                     </div>
-                                    <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
-                                        <div class="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-xs">
-                                            <div class="flex items-center gap-2">
-                                                <span id="gas-conn-dot-akhir" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
-                                                <span class="text-slate-500 dark:text-slate-400">Status:</span>
-                                                <strong id="gas-conn-status-akhir" class="font-semibold text-slate-700 dark:text-slate-200">Belum disambungkan</strong>
-                                            </div>
-                                            <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
-                                                <i data-lucide="clock" class="w-3.5 h-3.5"></i>
-                                                <span>Bacaan berjaya terakhir: <strong id="gas-last-read-akhir" class="font-semibold text-slate-700 dark:text-slate-200">—</strong></span>
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap items-center gap-2">
-                                            <button type="button" id="btn-gas-test-akhir" data-gas-action="test" data-gas-module="akhir" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-emerald/30 text-emerald dark:text-teal-400 bg-emerald/5 hover:bg-emerald/15 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="wifi" class="w-3.5 h-3.5"></i>
-                                                <span>Uji</span>
-                                            </button>
-                                            <button type="button" id="btn-gas-save-akhir" data-gas-action="save" data-gas-module="akhir" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald text-white shadow-sm shadow-emerald/20 hover:bg-emerald/90 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="save" class="w-3.5 h-3.5"></i>
-                                                <span>Simpan</span>
-                                            </button>
-                                            <button type="button" id="btn-gas-edit-akhir" data-gas-action="edit" data-gas-module="akhir" disabled class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="pencil" class="w-3.5 h-3.5"></i>
-                                                <span>Edit</span>
-                                            </button>
-                                            <button type="button" id="btn-gas-delete-akhir" data-gas-action="delete" data-gas-module="akhir" disabled class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-rose-200 dark:border-rose-800/60 bg-rose-50/70 dark:bg-rose-950/30 text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-950/60 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
-                                                <span>Hapus</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div id="gas-feedback-akhir" class="hidden rounded-xl px-3.5 py-2.5 text-xs border"></div>
+                                    <div>Bacaan terakhir: <strong id="gas-last-read-akhir" class="text-slate-700 dark:text-slate-200">—</strong></div>
                                 </div>
+
+                                <div>
+                                    <label for="gas-url-akhir" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">URL Web App Google Apps Script (/exec)</label>
+                                    <input type="url" id="gas-url-akhir" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-3.5 py-2.5 rounded-xl text-xs sm:text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald disabled:opacity-60">
+                                </div>
+
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <button type="button" id="btn-gas-test-akhir" data-gas-action="test" data-gas-module="akhir" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all disabled:opacity-45">Uji</button>
+                                    <button type="button" id="btn-gas-save-akhir" data-gas-action="save" data-gas-module="akhir" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald text-white hover:bg-emerald/90 transition-all disabled:opacity-45">Simpan</button>
+                                    <button type="button" id="btn-gas-edit-akhir" data-gas-action="edit" data-gas-module="akhir" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-amber-500 text-white hover:bg-amber-600 transition-all disabled:opacity-45">Edit</button>
+                                    <button type="button" id="btn-gas-delete-akhir" data-gas-action="delete" data-gas-module="akhir" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-rose-600 text-white hover:bg-rose-700 transition-all disabled:opacity-45">Hapus</button>
+                                </div>
+
+                                <div id="gas-feedback-akhir" class="hidden"></div>
                             </div>
 
-                            <!-- KAD 3: ACARA RELAY (Purple & Indigo) -->
-                            <div id="gas-card-relay" data-gas-module="relay" class="rounded-2xl bg-white dark:bg-navy-900 border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden">
-                                <div class="px-5 py-4 border-b border-slate-200/80 dark:border-slate-800 bg-gradient-to-r from-purple-50/90 via-white to-indigo-50/60 dark:from-purple-950/35 dark:via-navy-900 dark:to-indigo-950/20 flex flex-wrap items-center justify-between gap-3">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple to-indigo-600 text-white flex items-center justify-center shrink-0 shadow-sm shadow-purple/25">
-                                            <i data-lucide="users" class="w-5 h-5"></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-display text-base sm:text-lg font-extrabold tracking-wide text-navy-900 dark:text-white uppercase">ACARA RELAY</h3>
-                                            <p class="text-xs text-slate-500 dark:text-slate-400">Tab: 411, 412, 413, 414, 415, 424, 425</p>
-                                        </div>
+                            <!-- Kad Modul 3: ACARA RELAY -->
+                            <div class="rounded-2xl bg-white dark:bg-navy-900 border border-slate-200/80 dark:border-slate-800 p-5 sm:p-6 shadow-sm space-y-4">
+                                <div class="flex flex-wrap items-start justify-between gap-3">
+                                    <div>
+                                        <span class="text-[11px] font-bold uppercase tracking-wider text-purple">Modul 03</span>
+                                        <h3 class="font-display text-lg font-extrabold text-navy-900 dark:text-white">ACARA RELAY</h3>
                                     </div>
-                                    <button type="button" data-gas-code-btn="relay" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-purple/10 text-purple dark:text-indigo-400 border border-purple/25 hover:bg-purple hover:text-white transition-all">
-                                        <i data-lucide="code-2" class="w-4 h-4"></i>
+                                    <button type="button" data-gas-code-btn="relay" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-navy-900 dark:text-cyan border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+                                        <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
                                         <span>KOD GAS</span>
                                     </button>
                                 </div>
-                                <div class="p-5 space-y-4">
-                                    <div>
-                                        <label for="gas-url-relay" class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5">URL Google Apps Script</label>
-                                        <input type="url" id="gas-url-relay" data-gas-input="relay" placeholder="https://script.google.com/macros/s/.../exec" autocomplete="off" spellcheck="false" class="w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple focus:border-purple disabled:opacity-65 disabled:bg-slate-100 dark:disabled:bg-slate-900/80 transition-all" />
+
+                                <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
+                                    <div class="flex items-center gap-2">
+                                        <span id="gas-conn-dot-relay" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                                        <span id="gas-conn-status-relay" class="font-semibold text-slate-700 dark:text-slate-200">Belum disambungkan</span>
                                     </div>
-                                    <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
-                                        <div class="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-xs">
-                                            <div class="flex items-center gap-2">
-                                                <span id="gas-conn-dot-relay" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
-                                                <span class="text-slate-500 dark:text-slate-400">Status:</span>
-                                                <strong id="gas-conn-status-relay" class="font-semibold text-slate-700 dark:text-slate-200">Belum disambungkan</strong>
-                                            </div>
-                                            <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
-                                                <i data-lucide="clock" class="w-3.5 h-3.5"></i>
-                                                <span>Bacaan berjaya terakhir: <strong id="gas-last-read-relay" class="font-semibold text-slate-700 dark:text-slate-200">—</strong></span>
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap items-center gap-2">
-                                            <button type="button" id="btn-gas-test-relay" data-gas-action="test" data-gas-module="relay" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-purple/30 text-purple dark:text-indigo-400 bg-purple/5 hover:bg-purple/15 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="wifi" class="w-3.5 h-3.5"></i>
-                                                <span>Uji</span>
-                                            </button>
-                                            <button type="button" id="btn-gas-save-relay" data-gas-action="save" data-gas-module="relay" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-purple text-white shadow-sm shadow-purple/20 hover:bg-purple/90 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="save" class="w-3.5 h-3.5"></i>
-                                                <span>Simpan</span>
-                                            </button>
-                                            <button type="button" id="btn-gas-edit-relay" data-gas-action="edit" data-gas-module="relay" disabled class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="pencil" class="w-3.5 h-3.5"></i>
-                                                <span>Edit</span>
-                                            </button>
-                                            <button type="button" id="btn-gas-delete-relay" data-gas-action="delete" data-gas-module="relay" disabled class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-rose-200 dark:border-rose-800/60 bg-rose-50/70 dark:bg-rose-950/30 text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-950/60 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
-                                                <span>Hapus</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div id="gas-feedback-relay" class="hidden rounded-xl px-3.5 py-2.5 text-xs border"></div>
+                                    <div>Bacaan terakhir: <strong id="gas-last-read-relay" class="text-slate-700 dark:text-slate-200">—</strong></div>
                                 </div>
+
+                                <div>
+                                    <label for="gas-url-relay" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">URL Web App Google Apps Script (/exec)</label>
+                                    <input type="url" id="gas-url-relay" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-3.5 py-2.5 rounded-xl text-xs sm:text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple disabled:opacity-60">
+                                </div>
+
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <button type="button" id="btn-gas-test-relay" data-gas-action="test" data-gas-module="relay" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all disabled:opacity-45">Uji</button>
+                                    <button type="button" id="btn-gas-save-relay" data-gas-action="save" data-gas-module="relay" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-purple text-white hover:bg-purple/90 transition-all disabled:opacity-45">Simpan</button>
+                                    <button type="button" id="btn-gas-edit-relay" data-gas-action="edit" data-gas-module="relay" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-amber-500 text-white hover:bg-amber-600 transition-all disabled:opacity-45">Edit</button>
+                                    <button type="button" id="btn-gas-delete-relay" data-gas-action="delete" data-gas-module="relay" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-rose-600 text-white hover:bg-rose-700 transition-all disabled:opacity-45">Hapus</button>
+                                </div>
+
+                                <div id="gas-feedback-relay" class="hidden"></div>
                             </div>
 
-                            <!-- KAD 4: ACARA PADANG (Vibrant Orange & Amber) -->
-                            <div id="gas-card-padang" data-gas-module="padang" class="rounded-2xl bg-white dark:bg-navy-900 border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden">
-                                <div class="px-5 py-4 border-b border-slate-200/80 dark:border-slate-800 bg-gradient-to-r from-orange-50/90 via-white to-amber-50/60 dark:from-orange-950/35 dark:via-navy-900 dark:to-amber-950/20 flex flex-wrap items-center justify-between gap-3">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange to-amber-500 text-white flex items-center justify-center shrink-0 shadow-sm shadow-orange/25">
-                                            <i data-lucide="ruler" class="w-5 h-5"></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-display text-base sm:text-lg font-extrabold tracking-wide text-navy-900 dark:text-white uppercase">ACARA PADANG</h3>
-                                            <p class="text-xs text-slate-500 dark:text-slate-400">Tab: LONGJUMP, HIGHJUMP, SHOTPUT</p>
-                                        </div>
+                            <!-- Kad Modul 4: ACARA PADANG -->
+                            <div class="rounded-2xl bg-white dark:bg-navy-900 border border-slate-200/80 dark:border-slate-800 p-5 sm:p-6 shadow-sm space-y-4">
+                                <div class="flex flex-wrap items-start justify-between gap-3">
+                                    <div>
+                                        <span class="text-[11px] font-bold uppercase tracking-wider text-orange">Modul 04</span>
+                                        <h3 class="font-display text-lg font-extrabold text-navy-900 dark:text-white">ACARA PADANG</h3>
                                     </div>
-                                    <button type="button" data-gas-code-btn="padang" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-orange/10 text-orange dark:text-amber-400 border border-orange/25 hover:bg-orange hover:text-white transition-all">
-                                        <i data-lucide="code-2" class="w-4 h-4"></i>
+                                    <button type="button" data-gas-code-btn="padang" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-navy-900 dark:text-cyan border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+                                        <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
                                         <span>KOD GAS</span>
                                     </button>
                                 </div>
-                                <div class="p-5 space-y-4">
-                                    <div>
-                                        <label for="gas-url-padang" class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5">URL Google Apps Script</label>
-                                        <input type="url" id="gas-url-padang" data-gas-input="padang" placeholder="https://script.google.com/macros/s/.../exec" autocomplete="off" spellcheck="false" class="w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange disabled:opacity-65 disabled:bg-slate-100 dark:disabled:bg-slate-900/80 transition-all" />
-                                    </div>
-                                    <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
-                                        <div class="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-xs">
-                                            <div class="flex items-center gap-2">
-                                                <span id="gas-conn-dot-padang" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
-                                                <span class="text-slate-500 dark:text-slate-400">Status:</span>
-                                                <strong id="gas-conn-status-padang" class="font-semibold text-slate-700 dark:text-slate-200">Belum disambungkan</strong>
-                                            </div>
-                                            <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
-                                                <i data-lucide="clock" class="w-3.5 h-3.5"></i>
-                                                <span>Bacaan berjaya terakhir: <strong id="gas-last-read-padang" class="font-semibold text-slate-700 dark:text-slate-200">—</strong></span>
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap items-center gap-2">
-                                            <button type="button" id="btn-gas-test-padang" data-gas-action="test" data-gas-module="padang" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-orange/30 text-orange dark:text-amber-400 bg-orange/5 hover:bg-orange/15 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="wifi" class="w-3.5 h-3.5"></i>
-                                                <span>Uji</span>
-                                            </button>
-                                            <button type="button" id="btn-gas-save-padang" data-gas-action="save" data-gas-module="padang" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-orange text-white shadow-sm shadow-orange/20 hover:bg-orange/90 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="save" class="w-3.5 h-3.5"></i>
-                                                <span>Simpan</span>
-                                            </button>
-                                            <button type="button" id="btn-gas-edit-padang" data-gas-action="edit" data-gas-module="padang" disabled class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="pencil" class="w-3.5 h-3.5"></i>
-                                                <span>Edit</span>
-                                            </button>
-                                            <button type="button" id="btn-gas-delete-padang" data-gas-action="delete" data-gas-module="padang" disabled class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-rose-200 dark:border-rose-800/60 bg-rose-50/70 dark:bg-rose-950/30 text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-950/60 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
-                                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
-                                                <span>Hapus</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div id="gas-feedback-padang" class="hidden rounded-xl px-3.5 py-2.5 text-xs border"></div>
-                                </div>
-                            </div>
 
+                                <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
+                                    <div class="flex items-center gap-2">
+                                        <span id="gas-conn-dot-padang" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                                        <span id="gas-conn-status-padang" class="font-semibold text-slate-700 dark:text-slate-200">Belum disambungkan</span>
+                                    </div>
+                                    <div>Bacaan terakhir: <strong id="gas-last-read-padang" class="text-slate-700 dark:text-slate-200">—</strong></div>
+                                </div>
+
+                                <div>
+                                    <label for="gas-url-padang" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">URL Web App Google Apps Script (/exec)</label>
+                                    <input type="url" id="gas-url-padang" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-3.5 py-2.5 rounded-xl text-xs sm:text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-navy-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange disabled:opacity-60">
+                                </div>
+
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <button type="button" id="btn-gas-test-padang" data-gas-action="test" data-gas-module="padang" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all disabled:opacity-45">Uji</button>
+                                    <button type="button" id="btn-gas-save-padang" data-gas-action="save" data-gas-module="padang" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-orange text-white hover:bg-orange/90 transition-all disabled:opacity-45">Simpan</button>
+                                    <button type="button" id="btn-gas-edit-padang" data-gas-action="edit" data-gas-module="padang" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-amber-500 text-white hover:bg-amber-600 transition-all disabled:opacity-45">Edit</button>
+                                    <button type="button" id="btn-gas-delete-padang" data-gas-action="delete" data-gas-module="padang" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-rose-600 text-white hover:bg-rose-700 transition-all disabled:opacity-45">Hapus</button>
+                                </div>
+
+                                <div id="gas-feedback-padang" class="hidden"></div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -3304,24 +3255,26 @@
                 });
 
                 updateModuleStatisticsFromSnapshot(moduleKey);
+                if (MEDAL_ELIGIBLE_MODULES.indexOf(moduleKey) !== -1) {
+                    refreshMedalStandings();
+                }
             }
 
-            // =========================================================================
-            // DIRECT FETCH (GET & POST) KE GOOGLE APPS SCRIPT TANPA GATEWAY
-            // =========================================================================
             async function fetchGasGet(url) {
-                const response = await fetch(url, {
+                const separator = url.indexOf('?') === -1 ? '?' : '&';
+                const requestUrl = url + separator + 'action=read&t=' + Date.now();
+                const response = await fetch(requestUrl, {
                     method: 'GET',
                     redirect: 'follow'
                 });
                 if (!response.ok) {
-                    throw new Error('Ralat HTTP ' + response.status + ' semasa menyambung ke Google Apps Script.');
+                    throw new Error('Ralat HTTP ' + response.status + ' semasa membaca data daripada Google Apps Script.');
                 }
                 const text = await response.text();
                 try {
                     return JSON.parse(text);
                 } catch (err) {
-                    throw new Error('Respons daripada URL bukan JSON yang sah. Pastikan deployment Web App ditetapkan kepada "Anyone" dan mengembalikan JSON.');
+                    throw new Error('Respons bacaan daripada Google Apps Script bukan JSON yang sah.');
                 }
             }
 
@@ -3347,216 +3300,199 @@
 
             // Muatkan Data Modul daripada URL Tersimpan
             async function loadModuleFromSavedUrl(moduleKey) {
+                const cfg = GAS_MODULE_CONFIGS[moduleKey];
                 const st = gasMemoryState[moduleKey];
-                if (!st || !st.url || st.inFlight) return;
+                if (!cfg || !st || !st.url || st.inFlight) return;
 
-                const validCheck = validateGasUrl(st.url);
-                if (!validCheck.valid) {
-                    setViewDataStatus(moduleKey, 'error');
-                    return;
-                }
-
-                const targetUrl = validCheck.url;
                 st.inFlight = true;
                 st.requestSeq += 1;
                 const reqId = st.requestSeq;
-
                 syncAdminCardUI(moduleKey);
                 setViewDataStatus(moduleKey, 'loading');
 
                 try {
-                    const data = await fetchGasGet(targetUrl);
-                    // Abaikan stale response jika URL bertukar atau dipadam semasa in-flight
-                    if (st.requestSeq !== reqId || st.url !== targetUrl) return;
+                    const payload = await fetchGasGet(st.url);
+                    if (reqId !== st.requestSeq) return;
 
-                    const schemaCheck = validateGasReadResponse(moduleKey, data);
-                    if (!schemaCheck.valid) {
-                        st.inFlight = false;
-                        syncAdminCardUI(moduleKey);
+                    const check = validateGasReadResponse(moduleKey, payload);
+                    if (!check.valid) {
                         setViewDataStatus(moduleKey, 'error');
-                        setAdminCardFeedback(moduleKey, 'error', schemaCheck.error);
+                        setAdminCardFeedback(moduleKey, 'error', check.error);
+                        if (MEDAL_ELIGIBLE_MODULES.indexOf(moduleKey) !== -1) {
+                            refreshMedalStandings();
+                        }
                         return;
                     }
 
-                    st.snapshot = data;
-                    st.testedUrl = targetUrl;
-                    st.testedPayload = data;
-                    st.lastReadAt = data.fetchedAt || new Date().toISOString();
-                    st.inFlight = false;
+                    st.snapshot = payload;
+                    st.lastReadAt = payload.fetchedAt || new Date().toISOString();
 
-                    syncAdminCardUI(moduleKey);
-                    renderModuleView(moduleKey);
+                    const hasMissingOrWarnings = check.missingSheets.length > 0 || check.warnings.length > 0;
+                    setViewDataStatus(
+                        moduleKey,
+                        hasMissingOrWarnings ? 'incomplete' : 'success',
+                        formatLocalTimestamp(st.lastReadAt)
+                    );
 
-                    if (schemaCheck.missingSheets.length > 0 || schemaCheck.warnings.length > 0) {
-                        setViewDataStatus(moduleKey, 'incomplete', formatLocalTimestamp(st.lastReadAt));
+                    if (hasMissingOrWarnings) {
                         const notes = [];
-                        if (schemaCheck.missingSheets.length > 0) {
-                            notes.push('Tab tidak ditemui: ' + schemaCheck.missingSheets.join(', '));
+                        if (check.missingSheets.length > 0) {
+                            notes.push('Tab tiada: ' + check.missingSheets.join(', '));
                         }
-                        if (schemaCheck.warnings.length > 0) {
-                            notes.push(schemaCheck.warnings.join(' | '));
+                        if (check.warnings.length > 0) {
+                            notes.push(check.warnings.join(' | '));
                         }
-                        setAdminCardFeedback(moduleKey, 'warning', 'Data dimuatkan dengan amaran: ' + notes.join(' — '));
+                        setAdminCardFeedback(moduleKey, 'warning', 'Data dimuatkan dengan amaran: ' + notes.join('. '));
                     } else {
-                        setViewDataStatus(moduleKey, 'success', formatLocalTimestamp(st.lastReadAt));
-                        setAdminCardFeedback(moduleKey, 'success', 'Sambungan aktif. ' + schemaCheck.eventCount + ' tab acara berjaya dimuatkan.');
+                        setAdminCardFeedback(moduleKey, 'success', 'Berjaya membaca ' + check.eventCount + ' tab acara daripada Google Sheets.');
                     }
+
+                    renderModuleView(moduleKey);
                 } catch (err) {
-                    if (st.requestSeq !== reqId || st.url !== targetUrl) return;
-                    st.inFlight = false;
-                    syncAdminCardUI(moduleKey);
+                    if (reqId !== st.requestSeq) return;
                     setViewDataStatus(moduleKey, 'error');
                     setAdminCardFeedback(moduleKey, 'error', err && err.message ? err.message : 'Gagal membaca data daripada Google Apps Script.');
+                    if (MEDAL_ELIGIBLE_MODULES.indexOf(moduleKey) !== -1) {
+                        refreshMedalStandings();
+                    }
+                } finally {
+                    if (reqId === st.requestSeq) {
+                        st.inFlight = false;
+                        syncAdminCardUI(moduleKey);
+                    }
                 }
             }
 
-            // =========================================================================
-            // TINDAKAN PANEL ADMIN: UJI, SIMPAN, EDIT, HAPUS & KOD GAS
-            // =========================================================================
+            // Uji URL Google Apps Script sebelum atau selepas disimpan
             async function handleTestGasUrl(moduleKey) {
+                const cfg = GAS_MODULE_CONFIGS[moduleKey];
                 const st = gasMemoryState[moduleKey];
                 const input = document.getElementById('gas-url-' + moduleKey);
-                if (!st || !input || st.inFlight) return;
+                if (!cfg || !st || !input || st.inFlight) return;
 
-                const validCheck = validateGasUrl(input.value);
-                if (!validCheck.valid) {
-                    setAdminCardFeedback(moduleKey, 'error', validCheck.error);
+                const urlCheck = validateGasUrl(input.value);
+                if (!urlCheck.valid) {
+                    setAdminCardFeedback(moduleKey, 'error', urlCheck.error);
                     return;
                 }
 
-                const candidateUrl = validCheck.url;
                 st.inFlight = true;
                 st.requestSeq += 1;
                 const reqId = st.requestSeq;
                 syncAdminCardUI(moduleKey);
-                setAdminCardFeedback(moduleKey, 'info', 'Sedang menguji sambungan GET ke Google Apps Script...');
+                setAdminCardFeedback(moduleKey, 'info', 'Menguji sambungan dan struktur JSON Google Apps Script...');
 
                 try {
-                    const data = await fetchGasGet(candidateUrl);
-                    if (st.requestSeq !== reqId) return;
+                    const payload = await fetchGasGet(urlCheck.url);
+                    if (reqId !== st.requestSeq) return;
 
-                    const schemaCheck = validateGasReadResponse(moduleKey, data);
-                    st.inFlight = false;
-                    syncAdminCardUI(moduleKey);
-
-                    if (!schemaCheck.valid) {
+                    const check = validateGasReadResponse(moduleKey, payload);
+                    if (!check.valid) {
                         st.testedUrl = '';
                         st.testedPayload = null;
-                        setAdminCardFeedback(moduleKey, 'error', 'Ujian Gagal: ' + schemaCheck.error);
+                        setAdminCardFeedback(moduleKey, 'error', 'Ujian gagal: ' + check.error);
                         return;
                     }
 
-                    // Simpan hasil ujian dalam memori sahaja (tidak auto-simpan ke LocalStorage)
-                    st.testedUrl = candidateUrl;
-                    st.testedPayload = data;
-
-                    if (schemaCheck.missingSheets.length > 0 || schemaCheck.warnings.length > 0) {
-                        const warnParts = [];
-                        if (schemaCheck.missingSheets.length > 0) warnParts.push('Tab tiada: ' + schemaCheck.missingSheets.join(', '));
-                        if (schemaCheck.warnings.length > 0) warnParts.push(schemaCheck.warnings.join(' | '));
-                        setAdminCardFeedback(
-                            moduleKey,
-                            'warning',
-                            'Ujian Berjaya dengan Amaran (' + schemaCheck.eventCount + ' tab ditemui). ' + warnParts.join(' — ') + '. Tekan Simpan untuk mengaktifkan.'
-                        );
-                    } else {
-                        setAdminCardFeedback(
-                            moduleKey,
-                            'success',
-                            'Ujian Sambungan Berjaya! Modul ' + data.module + ' (v' + data.apiVersion + ') disahkan dengan ' + schemaCheck.eventCount + ' tab lengkap. Tekan Simpan untuk menyimpan URL.'
-                        );
-                    }
+                    st.testedUrl = urlCheck.url;
+                    st.testedPayload = payload;
+                    const warnMsg = check.missingSheets.length > 0
+                        ? ' (Amaran tab tiada: ' + check.missingSheets.join(', ') + ')'
+                        : '';
+                    setAdminCardFeedback(
+                        moduleKey,
+                        check.missingSheets.length > 0 ? 'warning' : 'success',
+                        'Ujian berjaya! Modul ' + cfg.apiModule + ' disahkan (' + check.eventCount + ' tab dibaca).' + warnMsg
+                    );
                 } catch (err) {
-                    if (st.requestSeq !== reqId) return;
-                    st.inFlight = false;
+                    if (reqId !== st.requestSeq) return;
                     st.testedUrl = '';
                     st.testedPayload = null;
-                    syncAdminCardUI(moduleKey);
-                    setAdminCardFeedback(moduleKey, 'error', 'Ujian Gagal: ' + (err && err.message ? err.message : 'Ralat rangkaian atau CORS.'));
+                    setAdminCardFeedback(moduleKey, 'error', 'Ujian gagal: ' + (err && err.message ? err.message : 'Tidak dapat menghubungi endpoint.'));
+                } finally {
+                    if (reqId === st.requestSeq) {
+                        st.inFlight = false;
+                        syncAdminCardUI(moduleKey);
+                    }
                 }
             }
 
+            // Simpan & Kunci URL Google Apps Script dalam LocalStorage
             async function handleSaveGasUrl(moduleKey) {
                 const cfg = GAS_MODULE_CONFIGS[moduleKey];
                 const st = gasMemoryState[moduleKey];
                 const input = document.getElementById('gas-url-' + moduleKey);
                 if (!cfg || !st || !input || st.inFlight) return;
 
-                const validCheck = validateGasUrl(input.value);
-                if (!validCheck.valid) {
-                    setAdminCardFeedback(moduleKey, 'error', validCheck.error);
+                const urlCheck = validateGasUrl(input.value);
+                if (!urlCheck.valid) {
+                    setAdminCardFeedback(moduleKey, 'error', urlCheck.error);
                     return;
                 }
 
-                const candidateUrl = validCheck.url;
-                let verifiedPayload = null;
-                let schemaCheck = null;
+                st.inFlight = true;
+                st.requestSeq += 1;
+                const reqId = st.requestSeq;
+                syncAdminCardUI(moduleKey);
+                setViewDataStatus(moduleKey, 'loading');
+                setAdminCardFeedback(moduleKey, 'info', 'Mengesahkan dan menyimpan URL sambungan...');
 
-                // Guna semula data ujian jika sah & sepadan dengan URL semasa tanpa GET tambahan
-                if (st.testedUrl === candidateUrl && st.testedPayload) {
-                    schemaCheck = validateGasReadResponse(moduleKey, st.testedPayload);
-                    if (schemaCheck.valid) {
-                        verifiedPayload = st.testedPayload;
+                try {
+                    let payload = st.testedUrl === urlCheck.url && st.testedPayload ? st.testedPayload : null;
+                    if (!payload) {
+                        payload = await fetchGasGet(urlCheck.url);
                     }
-                }
+                    if (reqId !== st.requestSeq) return;
 
-                if (!verifiedPayload) {
-                    st.inFlight = true;
-                    st.requestSeq += 1;
-                    const reqId = st.requestSeq;
-                    syncAdminCardUI(moduleKey);
-                    setAdminCardFeedback(moduleKey, 'info', 'Mengesahkan sambungan dan struktur data sebelum menyimpan...');
-
-                    try {
-                        const data = await fetchGasGet(candidateUrl);
-                        if (st.requestSeq !== reqId) return;
-
-                        schemaCheck = validateGasReadResponse(moduleKey, data);
-                        st.inFlight = false;
-                        if (!schemaCheck.valid) {
-                            syncAdminCardUI(moduleKey);
-                            setAdminCardFeedback(moduleKey, 'error', 'Penyimpanan Dibatalkan: ' + schemaCheck.error + (st.url ? ' Konfigurasi lama dikekalkan.' : ''));
-                            return;
-                        }
-                        verifiedPayload = data;
-                    } catch (err) {
-                        if (st.requestSeq !== reqId) return;
-                        st.inFlight = false;
-                        syncAdminCardUI(moduleKey);
-                        setAdminCardFeedback(moduleKey, 'error', 'Penyimpanan Dibatalkan: ' + (err && err.message ? err.message : 'Gagal menyambung.') + (st.url ? ' Konfigurasi lama dikekalkan.' : ''));
+                    const check = validateGasReadResponse(moduleKey, payload);
+                    if (!check.valid) {
+                        setViewDataStatus(moduleKey, 'error');
+                        setAdminCardFeedback(moduleKey, 'error', 'Simpanan dibatalkan: ' + check.error);
                         return;
                     }
-                }
 
-                // Simpan URL ke native LocalStorage selepas disahkan
-                try {
-                    localStorage.setItem(cfg.storageKey, candidateUrl);
+                    try {
+                        localStorage.setItem(cfg.storageKey, urlCheck.url);
+                    } catch (storageErr) {
+                        setAdminCardFeedback(moduleKey, 'error', 'Gagal menyimpan URL ke LocalStorage pelayar.');
+                        return;
+                    }
+
+                    st.url = urlCheck.url;
+                    st.isLocked = true;
+                    st.isEditing = false;
+                    st.testedUrl = urlCheck.url;
+                    st.testedPayload = payload;
+                    st.snapshot = payload;
+                    st.lastReadAt = payload.fetchedAt || new Date().toISOString();
+                    input.value = urlCheck.url;
+
+                    const hasMissingOrWarnings = check.missingSheets.length > 0 || check.warnings.length > 0;
+                    setViewDataStatus(
+                        moduleKey,
+                        hasMissingOrWarnings ? 'incomplete' : 'success',
+                        formatLocalTimestamp(st.lastReadAt)
+                    );
+                    setAdminCardFeedback(
+                        moduleKey,
+                        hasMissingOrWarnings ? 'warning' : 'success',
+                        'URL berjaya disimpan dan dikunci. Data modul telah dimuatkan.'
+                    );
+
+                    renderModuleView(moduleKey);
                 } catch (err) {
-                    syncAdminCardUI(moduleKey);
-                    setAdminCardFeedback(moduleKey, 'error', 'Gagal menyimpan URL ke LocalStorage pelayar.');
-                    return;
-                }
-
-                st.url = candidateUrl;
-                st.isLocked = true;
-                st.isEditing = false;
-                st.testedUrl = candidateUrl;
-                st.testedPayload = verifiedPayload;
-                st.snapshot = verifiedPayload;
-                st.lastReadAt = verifiedPayload.fetchedAt || new Date().toISOString();
-
-                syncAdminCardUI(moduleKey);
-                renderModuleView(moduleKey);
-
-                if (schemaCheck && (schemaCheck.missingSheets.length > 0 || schemaCheck.warnings.length > 0)) {
-                    setViewDataStatus(moduleKey, 'incomplete', formatLocalTimestamp(st.lastReadAt));
-                    setAdminCardFeedback(moduleKey, 'warning', 'Konfigurasi disimpan dengan amaran tab/struktur. Data telah dipaparkan pada ' + cfg.title + '.');
-                } else {
-                    setViewDataStatus(moduleKey, 'success', formatLocalTimestamp(st.lastReadAt));
-                    setAdminCardFeedback(moduleKey, 'success', 'Konfigurasi berjaya disimpan dan data dipaparkan secara automatik pada paparan ' + cfg.title + '.');
+                    if (reqId !== st.requestSeq) return;
+                    setViewDataStatus(moduleKey, 'error');
+                    setAdminCardFeedback(moduleKey, 'error', 'Simpanan gagal: ' + (err && err.message ? err.message : 'Ralat sambungan.'));
+                } finally {
+                    if (reqId === st.requestSeq) {
+                        st.inFlight = false;
+                        syncAdminCardUI(moduleKey);
+                    }
                 }
             }
 
+            // Buka Kunci URL untuk Kemas Kini (Edit)
             function handleEditGasUrl(moduleKey) {
                 const st = gasMemoryState[moduleKey];
                 const input = document.getElementById('gas-url-' + moduleKey);
@@ -3564,44 +3500,35 @@
 
                 st.isLocked = false;
                 st.isEditing = true;
+                st.testedUrl = '';
+                st.testedPayload = null;
                 syncAdminCardUI(moduleKey);
-                setAdminCardFeedback(moduleKey, 'info', 'Input URL dibuka untuk pengubahsuaian. URL lama dikekalkan sehingga URL baharu disahkan dan disimpan.');
+                setAdminCardFeedback(moduleKey, 'info', 'Medan URL dibuka untuk suntingan. Tekan Simpan selepas mengemas kini URL.');
                 input.focus();
             }
 
+            // Hapus URL Sambungan & Kosongkan Paparan Modul
             function handleDeleteGasUrl(moduleKey) {
                 const cfg = GAS_MODULE_CONFIGS[moduleKey];
                 const st = gasMemoryState[moduleKey];
                 const input = document.getElementById('gas-url-' + moduleKey);
-                if (!cfg || !st || !input || st.inFlight) return;
+                if (!cfg || !st || st.inFlight) return;
 
                 openConfirmDialog(
-                    'Hapus Konfigurasi ' + cfg.title,
-                    'Adakah anda pasti mahu membuang konfigurasi URL Google Apps Script bagi modul ' + cfg.title + '? Data dalam Google Sheets tidak akan dipadam.',
+                    'Hapus Sambungan Google Apps Script',
+                    'Adakah anda pasti mahu memadam URL sambungan bagi modul ' + cfg.title + '? Paparan data modul ini akan dikosongkan daripada sesi semasa.',
                     function () {
-                        st.requestSeq += 1;
                         try {
                             localStorage.removeItem(cfg.storageKey);
                         } catch (err) {
-                            // Abaikan ralat removeItem
+                            // Abaikan ralat akses storage
                         }
 
-                        // Bersihkan status pengesahan rasmi tempatan bagi modul ini
-                        const store = getOfficialConfirmationStore();
-                        Object.keys(store).forEach(function (k) {
-                            if (k.startsWith(moduleKey + '::')) {
-                                delete store[k];
-                            }
-                        });
-                        try {
-                            localStorage.setItem(STORAGE_KEYS.GAS_OFFICIAL_CONFIRMATIONS, JSON.stringify(store));
-                        } catch (err) {
-                            // Abaikan
-                        }
-
+                        st.requestSeq += 1;
                         st.url = '';
                         st.isLocked = false;
                         st.isEditing = false;
+                        st.inFlight = false;
                         st.testedUrl = '';
                         st.testedPayload = null;
                         st.snapshot = null;
@@ -3609,19 +3536,21 @@
                         st.activeEditCellKey = null;
                         st.selectedEventCode = '';
 
-                        input.value = '';
-                        clearEventSelectorBar(moduleKey);
+                        if (input) input.value = '';
                         clearModuleTables(moduleKey);
                         renderViewStatistics(moduleKey, null);
                         setViewDataStatus(moduleKey, 'disconnected', '—');
+                        setAdminCardFeedback(moduleKey, 'info', 'URL sambungan telah dipadam.');
                         syncAdminCardUI(moduleKey);
-                        setAdminCardFeedback(moduleKey, 'info', 'Konfigurasi URL bagi ' + cfg.title + ' telah dibuang.');
+                        if (MEDAL_ELIGIBLE_MODULES.indexOf(moduleKey) !== -1) {
+                            refreshMedalStandings();
+                        }
                     }
                 );
             }
 
             // =========================================================================
-            // DIRECT INLINE CELL EDITING (KLIK -> UBAH -> ENTER SIMPAN / ESC BATAL)
+            // INLINE CELL EDITING & ENTER AUTO SAVE (HANYA JULAT EDITABLE SAHAJA)
             // =========================================================================
             function activateInlineCellEditor(cellBox) {
                 if (!cellBox || cellBox.getAttribute('data-editing') === 'true') return;
@@ -3634,33 +3563,32 @@
                 const field = cellBox.getAttribute('data-field');
                 const rowId = cellBox.getAttribute('data-row-id');
 
-                const st = gasMemoryState[moduleKey];
                 const cfg = GAS_MODULE_CONFIGS[moduleKey];
-                if (!st || !cfg || !st.url || !st.snapshot) return;
+                const st = gasMemoryState[moduleKey];
+                if (!cfg || !st || !st.url || !st.snapshot || st.inFlight) return;
+                if (isGenderOfficiallyConfirmed(moduleKey, genderKey, sheetName)) return;
 
-                // Sekatan penguncian rasmi pada peringkat logik
-                if (isGenderOfficiallyConfirmed(moduleKey, genderKey, sheetName)) {
-                    return;
-                }
-
-                // Cari rekod sebenar dalam snapshot memori
                 let targetRecord = null;
-                st.snapshot.events.forEach(function (ev) {
-                    if (String(ev.sheetName) !== sheetName) return;
-                    (ev.groups || []).forEach(function (grp) {
-                        if (String(grp.gender || '').toLowerCase() !== genderKey) return;
-                        if (heatAttr !== null && String(grp.heat) !== heatAttr) return;
-                        (grp.records || []).forEach(function (rec) {
-                            if (Number(rec.rowNumber) === rowNumber) {
-                                targetRecord = rec;
-                            }
+                if (Array.isArray(st.snapshot.events)) {
+                    st.snapshot.events.forEach(function (ev) {
+                        if (String(ev.sheetName) !== String(sheetName)) return;
+                        const groups = Array.isArray(ev.groups) ? ev.groups : [];
+                        groups.forEach(function (grp) {
+                            if (String(grp.gender || '').toLowerCase() !== genderKey) return;
+                            if (heatAttr !== null && String(grp.heat) !== String(heatAttr)) return;
+                            const recs = Array.isArray(grp.records) ? grp.records : [];
+                            recs.forEach(function (rec) {
+                                if (String(rec.rowId) === String(rowId) && Number(rec.rowNumber) === rowNumber) {
+                                    targetRecord = rec;
+                                }
+                            });
                         });
                     });
-                });
-
-                if (!targetRecord || !Array.isArray(targetRecord.editableFields) || targetRecord.editableFields.indexOf(field) === -1) {
-                    return;
                 }
+
+                if (!targetRecord) return;
+                const editableSet = new Set(Array.isArray(targetRecord.editableFields) ? targetRecord.editableFields : []);
+                if (!editableSet.has(field)) return;
 
                 const originalValue = targetRecord.data && targetRecord.data[field] !== undefined && targetRecord.data[field] !== null
                     ? String(targetRecord.data[field])
@@ -3676,430 +3604,601 @@
                 input.className = 'w-24 sm:w-28 px-2 py-1 text-sm font-semibold rounded-md bg-white dark:bg-navy-950 text-navy-900 dark:text-white border-2 border-royal dark:border-cyan focus:outline-none';
 
                 cellBox.innerHTML = '';
-                cellBox.classList.remove('text-slate-400', 'dark:text-slate-500');
                 cellBox.appendChild(input);
                 input.focus();
                 input.select();
 
-                let isSubmitting = false;
+                let isFinished = false;
 
-                function restoreCellDisplay(displayText, errorMsg) {
+                function cancelInlineEdit() {
+                    if (isFinished) return;
+                    isFinished = true;
                     cellBox.removeAttribute('data-editing');
                     st.activeEditCellKey = null;
-                    cellBox.innerHTML = '';
-                    cellBox.textContent = displayText !== '' ? displayText : '—';
-                    if (displayText === '') {
-                        cellBox.classList.add('text-slate-400', 'dark:text-slate-500');
-                    } else {
-                        cellBox.classList.remove('text-slate-400', 'dark:text-slate-500');
-                    }
-                    if (errorMsg) {
-                        const errBadge = document.createElement('span');
-                        errBadge.className = 'ml-2 text-[11px] font-semibold text-rose-600 dark:text-rose-400';
-                        errBadge.textContent = errorMsg;
-                        cellBox.appendChild(errBadge);
-                    }
+                    renderModuleView(moduleKey);
                 }
 
-                input.addEventListener('keydown', async function (ev) {
-                    if (ev.key === 'Escape') {
-                        ev.preventDefault();
-                        if (isSubmitting) return;
-                        restoreCellDisplay(originalValue, '');
+                async function commitInlineEdit() {
+                    if (isFinished) return;
+                    isFinished = true;
+                    const nextRaw = String(input.value || '').trim();
+
+                    if (nextRaw === originalValue) {
+                        cellBox.removeAttribute('data-editing');
+                        st.activeEditCellKey = null;
+                        renderModuleView(moduleKey);
                         return;
                     }
 
-                    if (ev.key === 'Enter') {
-                        ev.preventDefault();
-                        if (isSubmitting) return;
+                    input.disabled = true;
+                    setViewDataStatus(moduleKey, 'saving');
 
-                        const nextValue = input.value.trim();
+                    const payload = {
+                        action: 'update',
+                        module: cfg.apiModule,
+                        sheetName: sheetName,
+                        gender: genderKey,
+                        rowNumber: rowNumber,
+                        field: field,
+                        previousValue: originalValue,
+                        newValue: nextRaw,
+                        identity: {
+                            namaAtlet: targetRecord.data ? (targetRecord.data.namaAtlet || '') : '',
+                            noBib: targetRecord.data ? (targetRecord.data.noBib || '') : '',
+                            pasukan: targetRecord.data ? (targetRecord.data.pasukan || '') : ''
+                        }
+                    };
+                    if (heatAttr !== null) {
+                        payload.heat = Number(heatAttr);
+                    }
 
-                        // Semak semula status penguncian rasmi sebelum penghantaran POST
-                        if (isGenderOfficiallyConfirmed(moduleKey, genderKey, sheetName)) {
-                            restoreCellDisplay(originalValue, 'Acara dikunci (Disahkan Rasmi)');
+                    try {
+                        const res = await fetchGasPost(st.url, payload);
+                        cellBox.removeAttribute('data-editing');
+                        st.activeEditCellKey = null;
+
+                        if (!res || res.success !== true) {
+                            setViewDataStatus(moduleKey, 'conflict');
+                            renderModuleView(moduleKey);
+                            openConfirmDialog(
+                                'Gagal Menyimpan Perubahan',
+                                (res && res.error) ? res.error : 'Perubahan ditolak oleh Google Apps Script.',
+                                null
+                            );
                             return;
                         }
 
-                        // Jangan hantar permintaan jika nilai tidak berubah
-                        if (nextValue === originalValue.trim()) {
-                            restoreCellDisplay(originalValue, '');
-                            return;
+                        const confirmedValue = res.updatedValue !== undefined && res.updatedValue !== null
+                            ? String(res.updatedValue)
+                            : nextRaw;
+                        if (targetRecord.data) {
+                            targetRecord.data[field] = confirmedValue;
                         }
+                        st.lastReadAt = res.updatedAt || new Date().toISOString();
+                        invalidateOfficialConfirmationIfNeeded(moduleKey, genderKey, sheetName);
+                        setViewDataStatus(moduleKey, 'saved', formatLocalTimestamp(st.lastReadAt));
+                        renderModuleView(moduleKey);
+                    } catch (err) {
+                        cellBox.removeAttribute('data-editing');
+                        st.activeEditCellKey = null;
+                        setViewDataStatus(moduleKey, 'error');
+                        renderModuleView(moduleKey);
+                        openConfirmDialog(
+                            'Ralat Sambungan Penulisan',
+                            err && err.message ? err.message : 'Gagal menghantar kemas kini ke Google Sheets.',
+                            null
+                        );
+                    }
+                }
 
-                        // Validasi asas sebelah klien sebelum POST
-                        if (nextValue.startsWith('=') || nextValue.startsWith('+') || nextValue.startsWith('-') || nextValue.startsWith('@')) {
-                            restoreCellDisplay(originalValue, 'Formula ditolak');
-                            setViewDataStatus(moduleKey, 'error');
-                            return;
-                        }
-                        if (nextValue !== '' && field === 'kedudukan' && !/^[1-9]\d*$/.test(nextValue)) {
-                            restoreCellDisplay(originalValue, 'Nombor bulat positif sahaja');
-                            return;
-                        }
-                        if (nextValue !== '' && field === 'masa' && !/^(\d{1,2}:)?\d{1,2}(\.\d{1,3})?$/.test(nextValue)) {
-                            restoreCellDisplay(originalValue, 'Format masa tidak sah');
-                            return;
-                        }
+                input.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        commitInlineEdit();
+                    } else if (e.key === 'Escape') {
+                        e.preventDefault();
+                        cancelInlineEdit();
+                    }
+                });
 
-                        isSubmitting = true;
-                        input.disabled = true;
+                input.addEventListener('blur', function () {
+                    cancelInlineEdit();
+                });
+            }
 
-                        const savingBadge = document.createElement('span');
-                        savingBadge.className = 'ml-2 text-[11px] font-semibold text-royal dark:text-cyan animate-pulse';
-                        savingBadge.textContent = 'Sedang Menyimpan...';
-                        cellBox.appendChild(savingBadge);
-                        setViewDataStatus(moduleKey, 'saving');
+            // =========================================================================
+            // PENGESAHAN RASMI, BATAL PENGESAHAN & CETAKAN JADUAL
+            // =========================================================================
+            function handleConfirmOfficial(viewKey, genderKey) {
+                const st = gasMemoryState[viewKey];
+                const cfg = GAS_MODULE_CONFIGS[viewKey];
+                if (!st || !cfg || !st.url || !st.snapshot || !st.selectedEventCode) return;
 
-                        const postPayload = {
-                            action: 'update',
-                            module: cfg.apiModule,
-                            sheetName: sheetName,
-                            gender: genderKey,
-                            heat: heatAttr !== null ? Number(heatAttr) : undefined,
-                            rowNumber: rowNumber,
-                            field: field,
-                            previousValue: originalValue,
-                            newValue: nextValue,
-                            identity: {
-                                namaAtlet: targetRecord.data.namaAtlet || '',
-                                noBib: targetRecord.data.noBib || '',
-                                pasukan: targetRecord.data.pasukan || ''
-                            }
+                const evCode = st.selectedEventCode;
+                const fp = computeGenderSnapshotFingerprint(viewKey, genderKey, st.snapshot, evCode);
+                if (!fp) return;
+
+                openConfirmDialog(
+                    'Sahkan Keputusan Rasmi',
+                    'Sahkan keputusan rasmi bagi ' + cfg.title + ' — Kod Acara ' + evCode + ' (' + genderKey.toUpperCase() + ')? Sel keputusan akan dikunci daripada suntingan selagi berstatus rasmi.',
+                    function () {
+                        const store = getOfficialConfirmationStore();
+                        const recKey = getConfirmationRecordKey(viewKey, evCode, genderKey, st.url);
+                        store[recKey] = {
+                            confirmedAt: new Date().toISOString(),
+                            fingerprint: fp
                         };
-
                         try {
-                            const res = await fetchGasPost(st.url, postPayload);
-                            if (!res || res.success !== true) {
-                                const errText = res && res.error ? res.error : 'Gagal menyimpan perubahan.';
-                                const isConflict = errText.toLowerCase().indexOf('konflik') !== -1;
-                                restoreCellDisplay(originalValue, isConflict ? 'Konflik data' : 'Gagal simpan');
-                                setViewDataStatus(moduleKey, isConflict ? 'conflict' : 'error');
-                                setAdminCardFeedback(moduleKey, 'error', errText);
+                            localStorage.setItem(STORAGE_KEYS.GAS_OFFICIAL_CONFIRMATIONS, JSON.stringify(store));
+                        } catch (err) {
+                            // Abaikan ralat kuota
+                        }
+                        renderModuleView(viewKey);
+                    }
+                );
+            }
+
+            function handleUnconfirmOfficial(viewKey, genderKey) {
+                const st = gasMemoryState[viewKey];
+                const cfg = GAS_MODULE_CONFIGS[viewKey];
+                if (!st || !cfg || !st.url || !st.selectedEventCode) return;
+
+                const evCode = st.selectedEventCode;
+                openConfirmDialog(
+                    'Batalkan Pengesahan Rasmi',
+                    'Tukarkan status ' + cfg.title + ' — Kod Acara ' + evCode + ' (' + genderKey.toUpperCase() + ') kepada Belum Disahkan? Kunci suntingan akan dibuka semula.',
+                    function () {
+                        invalidateOfficialConfirmationIfNeeded(viewKey, genderKey, evCode);
+                        renderModuleView(viewKey);
+                    }
+                );
+            }
+
+            function cleanupPrintSheet() {
+                document.body.classList.remove('acm-print-active');
+                const printSheet = document.getElementById('acm-print-sheet');
+                if (printSheet) {
+                    printSheet.innerHTML = '';
+                }
+            }
+
+            function handlePrintGenderSection(viewKey, genderKey) {
+                const cfg = GAS_MODULE_CONFIGS[viewKey];
+                const st = gasMemoryState[viewKey];
+                const groupsContainer = document.getElementById('groups-' + viewKey + '-' + genderKey);
+                const printSheet = document.getElementById('acm-print-sheet');
+                if (!cfg || !st || !groupsContainer || !printSheet) return;
+
+                const evCode = st.selectedEventCode || '';
+                const isOfficial = isGenderOfficiallyConfirmed(viewKey, genderKey, evCode);
+                const tournamentNameEl = document.getElementById('header-tournament-name');
+                const tournamentTitle = tournamentNameEl ? tournamentNameEl.textContent.trim() : 'STATISTIX HUB';
+
+                printSheet.innerHTML = '';
+                const headerDiv = document.createElement('div');
+                headerDiv.style.marginBottom = '12px';
+                headerDiv.style.borderBottom = '2px solid #0F172A';
+                headerDiv.style.paddingBottom = '8px';
+
+                const h1 = document.createElement('h1');
+                h1.style.fontSize = '16px';
+                h1.style.fontWeight = '800';
+                h1.style.margin = '0 0 4px 0';
+                h1.textContent = tournamentTitle + ' — ' + cfg.title;
+                headerDiv.appendChild(h1);
+
+                const meta = document.createElement('p');
+                meta.style.fontSize = '11px';
+                meta.style.margin = '0';
+                meta.textContent = 'Kod Acara: ' + evCode + ' | Kategori: ' + genderKey.toUpperCase() + ' | Status: ' + (isOfficial ? 'DISAHKAN RASMI' : 'BELUM DISAHKAN');
+                headerDiv.appendChild(meta);
+                printSheet.appendChild(headerDiv);
+
+                const clone = groupsContainer.cloneNode(true);
+                clone.classList.add('acm-print-section');
+                printSheet.appendChild(clone);
+
+                document.body.classList.add('acm-print-active');
+                window.print();
+            }
+
+            // =========================================================================
+            // PODIUM PINGAT — SINGLE SOURCE OF TRUTH & AUTOMATIC MEDAL TALLY
+            // Official Results -> Medal Calculation -> Team Aggregation -> Ranking -> Pure Render
+            // =========================================================================
+            const MEDAL_ELIGIBLE_MODULES = ['akhir', 'relay', 'padang'];
+            const MEDAL_MODULE_LABELS = {
+                akhir: 'Akhir Balapan',
+                relay: 'Acara Relay',
+                padang: 'Acara Padang'
+            };
+
+            function normalizeTeamIdentity(rawTeamName) {
+                const cleaned = String(rawTeamName || '').trim().replace(/\s+/g, ' ');
+                if (!cleaned || cleaned === '-' || cleaned === '—') {
+                    return null;
+                }
+                return {
+                    key: cleaned.toLowerCase(),
+                    display: cleaned
+                };
+            }
+
+            function parseValidMedalRank(rawKedudukan) {
+                const trimmed = String(rawKedudukan === null || rawKedudukan === undefined ? '' : rawKedudukan).trim();
+                if (!trimmed) return null;
+                // Hanya nombor bulat 1, 2 atau 3 yang sah (menolak 4+, 0, negatif, DNS, DNF, DQ)
+                if (!/^[123]$/.test(trimmed)) return null;
+                return Number(trimmed);
+            }
+
+            function inspectMedalDataReadiness() {
+                const unconfigured = [];
+                const loading = [];
+                const failed = [];
+                const incomplete = [];
+                let readyCount = 0;
+
+                MEDAL_ELIGIBLE_MODULES.forEach(function (modKey) {
+                    const st = gasMemoryState[modKey];
+                    const label = MEDAL_MODULE_LABELS[modKey] || modKey;
+                    const panel = document.getElementById('status-panel-' + modKey);
+                    const panelState = panel ? panel.getAttribute('data-status-state') : '';
+
+                    if (!st || !st.url) {
+                        unconfigured.push(label);
+                        return;
+                    }
+                    if (st.inFlight || panelState === 'loading' || panelState === 'saving') {
+                        loading.push(label);
+                        return;
+                    }
+                    if (!st.snapshot || panelState === 'error') {
+                        failed.push(label);
+                        return;
+                    }
+                    if (panelState === 'incomplete' || panelState === 'conflict') {
+                        incomplete.push(label);
+                        readyCount += 1;
+                        return;
+                    }
+                    readyCount += 1;
+                });
+
+                return {
+                    totalModules: MEDAL_ELIGIBLE_MODULES.length,
+                    readyCount: readyCount,
+                    isFullyReady: readyCount === MEDAL_ELIGIBLE_MODULES.length && incomplete.length === 0 && loading.length === 0 && failed.length === 0,
+                    unconfigured: unconfigured,
+                    loading: loading,
+                    failed: failed,
+                    incomplete: incomplete
+                };
+            }
+
+            function collectOfficialMedalResults() {
+                const eligibleAwards = [];
+                const integrityIssues = [];
+                const seenRecordIds = new Set();
+
+                MEDAL_ELIGIBLE_MODULES.forEach(function (moduleKey) {
+                    const st = gasMemoryState[moduleKey];
+                    const modLabel = MEDAL_MODULE_LABELS[moduleKey] || moduleKey;
+                    if (!st || !st.url || !st.snapshot || !Array.isArray(st.snapshot.events)) return;
+                    if (st.inFlight) return;
+
+                    const panel = document.getElementById('status-panel-' + moduleKey);
+                    const panelState = panel ? panel.getAttribute('data-status-state') : '';
+                    if (panelState === 'saving' || panelState === 'conflict' || panelState === 'error') {
+                        integrityIssues.push(modLabel + ' mempunyai status sambungan atau konflik data yang belum diselesaikan.');
+                        return;
+                    }
+
+                    st.snapshot.events.forEach(function (ev) {
+                        const evCode = String(ev && (ev.sheetName || ev.eventCode) || '').trim();
+                        if (!evCode) return;
+
+                        const groups = Array.isArray(ev.groups) ? ev.groups : [];
+                        ['lelaki', 'perempuan'].forEach(function (genderKey) {
+                            // Wajib disahkan rasmi mengikut kombinasi modul + kod acara + jantina + sumber GAS + fingerprint
+                            if (!isGenderOfficiallyConfirmed(moduleKey, genderKey, evCode)) {
                                 return;
                             }
 
-                            const confirmedValue = res.updatedValue !== undefined && res.updatedValue !== null
-                                ? String(res.updatedValue)
-                                : nextValue;
-
-                            // Kemas kini snapshot dalam memori sahaja
-                            targetRecord.data[field] = confirmedValue;
-                            st.activeEditCellKey = null;
-
-                            // Batalkan pengesahan rasmi tempatan bagi acara & jantina ini jika nilai berubah
-                            if (!res.unchanged) {
-                                invalidateOfficialConfirmationIfNeeded(moduleKey, genderKey, sheetName);
-                            }
-
-                            setViewDataStatus(moduleKey, 'saved', formatLocalTimestamp(res.updatedAt || new Date().toISOString()));
-                            renderModuleView(moduleKey);
-                        } catch (err) {
-                            // Jika timeout/ralat rangkaian, pulihkan nilai lama tanpa retry automatik
-                            restoreCellDisplay(originalValue, 'Ralat sambungan');
-                            setViewDataStatus(moduleKey, 'error');
-                            setAdminCardFeedback(moduleKey, 'error', 'Penulisan gagal atau tidak dapat dipastikan: ' + (err && err.message ? err.message : 'Ralat rangkaian.'));
-                        }
-                    }
-                });
-            }
-
-            // =========================================================================
-            // PENGESAHAN RASMI TEMPATAN & CETAKAN BERSIH
-            // =========================================================================
-            function handleConfirmOfficial(moduleKey, genderKey) {
-                const cfg = GAS_MODULE_CONFIGS[moduleKey];
-                const st = gasMemoryState[moduleKey];
-                if (!cfg || !st || !st.url || !st.snapshot || st.activeEditCellKey || st.inFlight) return;
-
-                const statusPanel = document.getElementById('status-panel-' + moduleKey);
-                const panelState = statusPanel ? statusPanel.getAttribute('data-status-state') : '';
-                if (panelState === 'saving' || panelState === 'conflict') return;
-
-                const eventCode = String(st.selectedEventCode || '');
-                if (!eventCode || isGenderOfficiallyConfirmed(moduleKey, genderKey, eventCode)) return;
-
-                const fingerprint = computeGenderSnapshotFingerprint(moduleKey, genderKey, st.snapshot, eventCode);
-                if (!fingerprint) return;
-
-                openConfirmDialog(
-                    'Sahkan Keputusan Rasmi — ' + eventCode + ' (' + genderKey.toUpperCase() + ')',
-                    'Status pengesahan rasmi bagi acara ' + eventCode + ' ini akan mengunci pengeditan keputusan pada pelayar ini sahaja (bukan mengunci Google Sheets atau peranti lain). Tekan butang "Belum Disahkan" jika perlu membuka semula pengeditan. Teruskan?',
-                    function () {
-                        const store = getOfficialConfirmationStore();
-                        const recKey = getConfirmationRecordKey(moduleKey, eventCode, genderKey, st.url);
-                        const existing = store[recKey];
-                        if (!existing || existing.fingerprint !== fingerprint) {
-                            store[recKey] = {
-                                module: moduleKey,
-                                eventCode: eventCode,
-                                gender: genderKey,
-                                fingerprint: fingerprint,
-                                confirmedAt: new Date().toISOString()
-                            };
-                            try {
-                                localStorage.setItem(STORAGE_KEYS.GAS_OFFICIAL_CONFIRMATIONS, JSON.stringify(store));
-                            } catch (err) {
-                                // Abaikan ralat kuota
-                            }
-                        }
-                        renderModuleView(moduleKey);
-                    }
-                );
-            }
-
-            function handleUnconfirmOfficial(moduleKey, genderKey) {
-                const cfg = GAS_MODULE_CONFIGS[moduleKey];
-                const st = gasMemoryState[moduleKey];
-                if (!cfg || !st || !st.url || !st.snapshot || st.activeEditCellKey) return;
-
-                const eventCode = String(st.selectedEventCode || '');
-                if (!eventCode || !isGenderOfficiallyConfirmed(moduleKey, genderKey, eventCode)) return;
-
-                openConfirmDialog(
-                    'Buka Semula Pengeditan — ' + eventCode + ' (' + genderKey.toUpperCase() + ')',
-                    'Adakah anda pasti mahu menukar status acara ' + eventCode + ' (' + genderKey.toUpperCase() + ') kepada Belum Disahkan? Nilai keputusan sedia ada akan dikekalkan dan julat sel yang dibenarkan akan dibuka semula untuk pengeditan.',
-                    function () {
-                        invalidateOfficialConfirmationIfNeeded(moduleKey, genderKey, eventCode);
-                        renderModuleView(moduleKey);
-                    }
-                );
-            }
-
-            let isPrintInProgress = false;
-
-            function cleanupPrintSheet() {
-                const printSheet = document.getElementById('acm-print-sheet');
-                document.body.classList.remove('acm-print-active');
-                if (printSheet) {
-                    printSheet.classList.add('hidden');
-                    printSheet.innerHTML = '';
-                }
-                isPrintInProgress = false;
-            }
-
-            function handlePrintGenderSection(moduleKey, genderKey) {
-                if (isPrintInProgress) return;
-
-                const cfg = GAS_MODULE_CONFIGS[moduleKey];
-                const st = gasMemoryState[moduleKey];
-                const printSheet = document.getElementById('acm-print-sheet');
-                if (!cfg || !st || !printSheet) {
-                    console.error('[ACM Print] Konfigurasi modul atau kontena cetakan tidak ditemui.', { moduleKey: moduleKey, genderKey: genderKey });
-                    return;
-                }
-
-                // Pastikan printSheet merupakan direct child kepada body supaya tidak terlindung oleh #app-wrapper
-                if (printSheet.parentElement !== document.body) {
-                    document.body.appendChild(printSheet);
-                }
-
-                if (!st.snapshot || !Array.isArray(st.snapshot.events)) {
-                    console.error('[ACM Print] Tiada snapshot data tersedia untuk cetakan.', { moduleKey: moduleKey });
-                    setAdminCardFeedback(moduleKey, 'error', 'Tiada data keputusan yang tersedia bagi acara yang dipilih.');
-                    return;
-                }
-
-                // Elakkan mencetak jika ada pengeditan sel atau penyimpanan sedang berlangsung
-                const statusPanel = document.getElementById('status-panel-' + moduleKey);
-                const panelState = statusPanel ? statusPanel.getAttribute('data-status-state') : '';
-                if (st.activeEditCellKey || st.inFlight || panelState === 'saving') {
-                    console.error('[ACM Print] Cetakan ditangguhkan kerana proses pengeditan atau penyimpanan sedang berjalan.');
-                    return;
-                }
-
-                const normalizedGender = String(genderKey || '').trim().toLowerCase();
-                if (normalizedGender !== 'lelaki' && normalizedGender !== 'perempuan') {
-                    console.error('[ACM Print] Kategori jantina tidak sah:', genderKey);
-                    return;
-                }
-
-                const eventCode = String(st.selectedEventCode || '').trim();
-                if (!eventCode) {
-                    console.error('[ACM Print] Tiada kod acara aktif dipilih.');
-                    return;
-                }
-
-                const matchingEvents = st.snapshot.events.filter(function (ev) {
-                    return String(ev.sheetName || ev.eventCode || '').trim() === eventCode;
-                });
-                if (matchingEvents.length === 0) {
-                    console.error('[ACM Print] Acara aktif tidak ditemui dalam memory state:', eventCode);
-                    return;
-                }
-
-                const tournamentNameEl = document.getElementById('header-tournament-name');
-                const tournamentYearEl = document.getElementById('header-tournament-year');
-                const isConfirmed = isGenderOfficiallyConfirmed(moduleKey, normalizedGender, eventCode);
-
-                // Tetapkan orientasi kertas cadangan mengikut modul (Portrait untuk Relay, Landscape untuk Saringan/Akhir/Padang)
-                let dynamicPageStyle = document.getElementById('acm-dynamic-page-style');
-                if (!dynamicPageStyle) {
-                    dynamicPageStyle = document.createElement('style');
-                    dynamicPageStyle.id = 'acm-dynamic-page-style';
-                    document.head.appendChild(dynamicPageStyle);
-                }
-                const pageOrientation = moduleKey === 'relay' ? 'portrait' : 'landscape';
-                dynamicPageStyle.textContent = '@page { size: A4 ' + pageOrientation + '; margin: 10mm; }';
-
-                printSheet.innerHTML = '';
-
-                // Kepala Dokumen Cetakan
-                const headerBox = document.createElement('div');
-                headerBox.style.marginBottom = '12px';
-                headerBox.style.borderBottom = '2px solid #0F172A';
-                headerBox.style.paddingBottom = '8px';
-
-                const h1 = document.createElement('h1');
-                h1.style.fontSize = '15px';
-                h1.style.fontWeight = '800';
-                h1.style.margin = '0';
-                h1.textContent = (tournamentNameEl ? tournamentNameEl.textContent.trim() : 'STATISTIX HUB') +
-                    ' (' + (tournamentYearEl ? tournamentYearEl.textContent.trim() : '----') + ')';
-
-                const eventDisplayName = cfg.displayNames && cfg.displayNames[eventCode]
-                    ? cfg.displayNames[eventCode] + ' (' + eventCode + ')'
-                    : eventCode;
-
-                const h2 = document.createElement('h2');
-                h2.style.fontSize = '13px';
-                h2.style.fontWeight = '700';
-                h2.style.margin = '4px 0 0 0';
-                h2.textContent = cfg.title + ' — ACARA: ' + eventDisplayName + ' | KATEGORI: ' + normalizedGender.toUpperCase();
-
-                const meta = document.createElement('p');
-                meta.style.fontSize = '10px';
-                meta.style.margin = '4px 0 0 0';
-                meta.style.color = '#334155';
-                meta.textContent = 'Status Pengesahan: ' + (isConfirmed ? 'DISAHKAN RASMI' : 'BELUM DISAHKAN') +
-                    ' | Dicetak pada: ' + formatLocalTimestamp(new Date());
-
-                headerBox.appendChild(h1);
-                headerBox.appendChild(h2);
-                headerBox.appendChild(meta);
-                printSheet.appendChild(headerBox);
-
-                let expectedTotalRecords = 0;
-
-                // Bina Jadual Lengkap Terus daripada Memory State (Tanpa Sekatan Overflow/Scroll)
-                matchingEvents.forEach(function (ev) {
-                    const groups = (Array.isArray(ev.groups) ? ev.groups : []).filter(function (g) {
-                        return String(g.gender || '').trim().toLowerCase() === normalizedGender;
-                    });
-
-                    groups.forEach(function (grp) {
-                        const sectionDiv = document.createElement('div');
-                        sectionDiv.className = 'acm-print-section';
-
-                        if (moduleKey === 'saringan' && grp.heat !== undefined && grp.heat !== null) {
-                            const heatTitle = document.createElement('p');
-                            heatTitle.style.fontSize = '11px';
-                            heatTitle.style.fontWeight = '700';
-                            heatTitle.style.margin = '0 0 5px 0';
-                            heatTitle.style.textTransform = 'uppercase';
-                            heatTitle.textContent = 'Pusingan: Saringan ' + String(grp.heat);
-                            sectionDiv.appendChild(heatTitle);
-                        }
-
-                        const table = document.createElement('table');
-                        const thead = document.createElement('thead');
-                        const headRow = document.createElement('tr');
-
-                        cfg.columns.forEach(function (colDef) {
-                            const th = document.createElement('th');
-                            th.textContent = colDef.label;
-                            headRow.appendChild(th);
-                        });
-                        thead.appendChild(headRow);
-                        table.appendChild(thead);
-
-                        const tbody = document.createElement('tbody');
-                        const records = Array.isArray(grp.records) ? grp.records : [];
-                        expectedTotalRecords += records.length;
-
-                        if (records.length === 0) {
-                            const emptyTr = document.createElement('tr');
-                            const emptyTd = document.createElement('td');
-                            emptyTd.colSpan = cfg.columns.length;
-                            emptyTd.style.fontStyle = 'italic';
-                            emptyTd.textContent = 'Tiada rekod peserta dalam julat ini.';
-                            emptyTr.appendChild(emptyTd);
-                            tbody.appendChild(emptyTr);
-                        } else {
-                            records.forEach(function (rec) {
-                                const tr = document.createElement('tr');
-                                cfg.columns.forEach(function (colDef) {
-                                    const td = document.createElement('td');
-                                    const val = rec.data && rec.data[colDef.key] !== undefined && rec.data[colDef.key] !== null
-                                        ? String(rec.data[colDef.key]).trim()
-                                        : '';
-                                    td.textContent = val;
-                                    tr.appendChild(td);
-                                });
-                                tbody.appendChild(tr);
+                            const matchingGroups = groups.filter(function (g) {
+                                return String(g && g.gender || '').trim().toLowerCase() === genderKey;
                             });
-                        }
 
-                        table.appendChild(tbody);
-                        sectionDiv.appendChild(table);
-                        printSheet.appendChild(sectionDiv);
+                            matchingGroups.forEach(function (grp) {
+                                const records = Array.isArray(grp.records) ? grp.records : [];
+                                const groupAwards = [];
+                                const seenParticipantInGroup = new Set();
+                                let hasSuspiciousDuplicate = false;
+
+                                records.forEach(function (rec, idx) {
+                                    if (!rec || typeof rec !== 'object' || !rec.data) return;
+
+                                    const stableRecordId = String(
+                                        rec.rowId ||
+                                        (moduleKey + ':' + evCode + ':' + genderKey + ':R' + String(rec.rowNumber || idx))
+                                    ).trim();
+
+                                    if (seenRecordIds.has(stableRecordId)) {
+                                        hasSuspiciousDuplicate = true;
+                                        return;
+                                    }
+                                    seenRecordIds.add(stableRecordId);
+
+                                    const teamInfo = normalizeTeamIdentity(rec.data.pasukan);
+                                    const participantKey = moduleKey === 'relay'
+                                        ? (teamInfo ? teamInfo.key : '')
+                                        : (String(rec.data.noBib || '').trim().toLowerCase() + '|' + String(rec.data.namaAtlet || '').trim().toLowerCase() + '|' + (teamInfo ? teamInfo.key : ''));
+
+                                    if (participantKey && participantKey !== '||') {
+                                        if (seenParticipantInGroup.has(participantKey)) {
+                                            hasSuspiciousDuplicate = true;
+                                        }
+                                        seenParticipantInGroup.add(participantKey);
+                                    }
+
+                                    const medalRank = parseValidMedalRank(rec.data.kedudukan);
+                                    if (medalRank === null) return;
+
+                                    if (!teamInfo) {
+                                        integrityIssues.push(modLabel + ' (' + evCode + ' - ' + genderKey.toUpperCase() + '): Rekod kedudukan ' + medalRank + ' diabaikan kerana nama pasukan kosong atau tidak sah.');
+                                        return;
+                                    }
+
+                                    groupAwards.push({
+                                        recordId: stableRecordId,
+                                        moduleKey: moduleKey,
+                                        eventCode: evCode,
+                                        gender: genderKey,
+                                        rank: medalRank,
+                                        teamKey: teamInfo.key,
+                                        teamDisplay: teamInfo.display
+                                    });
+                                });
+
+                                // Semak pendua meragukan atau lebihan pemenang podium yang bercanggah dalam acara sama
+                                if (hasSuspiciousDuplicate) {
+                                    integrityIssues.push(modLabel + ' (' + evCode + ' - ' + genderKey.toUpperCase() + '): Pendua peserta/pasukan meragukan dikesan. Pengiraan acara ini ditangguhkan sehingga disemak.');
+                                    return;
+                                }
+
+                                if (groupAwards.length > 3) {
+                                    integrityIssues.push(modLabel + ' (' + evCode + ' - ' + genderKey.toUpperCase() + '): Terdapat lebih daripada 3 kedudukan pingat (' + groupAwards.length + ' rekod). Sila semak kedudukan rasmi.');
+                                    return;
+                                }
+
+                                groupAwards.forEach(function (aw) {
+                                    eligibleAwards.push(aw);
+                                });
+                            });
+                        });
                     });
                 });
 
-                // Maklumat Hak Cipta di Penghujung Dokumen Cetakan
-                const printFooter = document.createElement('div');
-                printFooter.style.marginTop = '14px';
-                printFooter.style.paddingTop = '8px';
-                printFooter.style.borderTop = '1px solid #CBD5E1';
-                printFooter.style.textAlign = 'center';
-                printFooter.style.fontSize = '10px';
-                printFooter.style.color = '#475569';
-                printFooter.textContent = 'Hak Cipta Terpelihara @ 2026 eL_mioZ AthletiX Management';
-                printSheet.appendChild(printFooter);
+                return {
+                    awards: eligibleAwards,
+                    integrityIssues: integrityIssues
+                };
+            }
 
-                // PRE-PRINT VALIDATION: Sahkan jadual, thead, tbody, kolum dan baris sebelum window.print()
-                const builtTables = printSheet.querySelectorAll('table');
-                let builtDataRowCount = 0;
-                let hasValidStructure = builtTables.length > 0 && expectedTotalRecords > 0;
+            function calculateMedalTally(awards) {
+                const teamMap = new Map();
 
-                builtTables.forEach(function (tbl) {
-                    const thCount = tbl.querySelectorAll('thead th').length;
-                    const tb = tbl.querySelector('tbody');
-                    if (!tb || thCount !== cfg.columns.length) {
-                        hasValidStructure = false;
-                        return;
+                (Array.isArray(awards) ? awards : []).forEach(function (aw) {
+                    if (!aw || !aw.teamKey) return;
+                    let entry = teamMap.get(aw.teamKey);
+                    if (!entry) {
+                        entry = {
+                            teamKey: aw.teamKey,
+                            pasukan: aw.teamDisplay,
+                            emas: 0,
+                            perak: 0,
+                            gangsa: 0,
+                            jumlah: 0
+                        };
+                        teamMap.set(aw.teamKey, entry);
                     }
-                    builtDataRowCount += tb.querySelectorAll('tr').length;
+
+                    if (aw.rank === 1) entry.emas += 1;
+                    else if (aw.rank === 2) entry.perak += 1;
+                    else if (aw.rank === 3) entry.gangsa += 1;
+
+                    entry.jumlah = entry.emas + entry.perak + entry.gangsa;
                 });
 
-                if (!hasValidStructure || builtDataRowCount !== expectedTotalRecords) {
-                    console.error('[ACM Print] Pre-print validation gagal.', {
-                        moduleKey: moduleKey,
-                        eventCode: eventCode,
-                        gender: normalizedGender,
-                        tableCount: builtTables.length,
-                        expectedTotalRecords: expectedTotalRecords,
-                        builtDataRowCount: builtDataRowCount
-                    });
-                    cleanupPrintSheet();
+                const result = [];
+                teamMap.forEach(function (teamObj) {
+                    if (teamObj.jumlah >= 1) {
+                        result.push(teamObj);
+                    }
+                });
+                return result;
+            }
+
+            function rankMedalTeams(teamTallies) {
+                const list = Array.isArray(teamTallies) ? teamTallies.slice() : [];
+
+                list.sort(function (a, b) {
+                    if (b.emas !== a.emas) return b.emas - a.emas;
+                    if (b.perak !== a.perak) return b.perak - a.perak;
+                    if (b.gangsa !== a.gangsa) return b.gangsa - a.gangsa;
+                    // Susunan abjad hanya untuk paparan pasukan yang berkongsi kedudukan sama
+                    return a.pasukan.localeCompare(b.pasukan, 'ms', { sensitivity: 'base' });
+                });
+
+                // Competition ranking (contoh: 1, 2, 2, 4)
+                for (let i = 0; i < list.length; i++) {
+                    if (i === 0) {
+                        list[i].rank = 1;
+                    } else {
+                        const prev = list[i - 1];
+                        const curr = list[i];
+                        if (curr.emas === prev.emas && curr.perak === prev.perak && curr.gangsa === prev.gangsa) {
+                            curr.rank = prev.rank;
+                        } else {
+                            curr.rank = i + 1;
+                        }
+                    }
+                }
+
+                return list;
+            }
+
+            function renderMedalTable(rankedTeams, readiness, integrityIssues) {
+                const noticeEl = document.getElementById('podium-data-notice');
+                const tbody = document.getElementById('tbody-podium-pingat');
+                if (!tbody) return;
+
+                // Bina mesej status kelengkapan sumber data & isu integriti (Read-Only)
+                if (noticeEl) {
+                    const messages = [];
+                    let tone = 'info';
+
+                    if (readiness.loading.length > 0) {
+                        messages.push('Sedang memuatkan data daripada Google Apps Script: ' + readiness.loading.join(', ') + '.');
+                    }
+                    if (readiness.failed.length > 0) {
+                        tone = 'error';
+                        messages.push('Data gagal dibaca bagi modul: ' + readiness.failed.join(', ') + '. Pungutan pingat bagi modul tersebut tidak dapat dikira.');
+                    }
+                    if (readiness.unconfigured.length > 0) {
+                        if (tone !== 'error') tone = 'warning';
+                        if (readiness.readyCount === 0) {
+                            messages.push('Sumber data belum dimuatkan atau belum dikonfigurasikan dalam Panel Admin (' + readiness.unconfigured.join(', ') + ').');
+                        } else {
+                            messages.push('Data pungutan pingat belum lengkap — modul belum disambungkan: ' + readiness.unconfigured.join(', ') + '.');
+                        }
+                    }
+                    if (readiness.incomplete.length > 0) {
+                        if (tone !== 'error') tone = 'warning';
+                        messages.push('Data pungutan pingat belum lengkap — terdapat tab/amaran data pada: ' + readiness.incomplete.join(', ') + '.');
+                    }
+                    if (Array.isArray(integrityIssues) && integrityIssues.length > 0) {
+                        tone = 'error';
+                        integrityIssues.forEach(function (issue) {
+                            messages.push(issue);
+                        });
+                    }
+
+                    if (messages.length === 0) {
+                        noticeEl.classList.add('hidden');
+                        noticeEl.innerHTML = '';
+                    } else {
+                        const toneClasses = {
+                            info: 'bg-blue-50/80 dark:bg-blue-950/30 text-blue-800 dark:text-blue-200',
+                            warning: 'bg-amber-50/90 dark:bg-amber-950/30 text-amber-900 dark:text-amber-200',
+                            error: 'bg-rose-50/90 dark:bg-rose-950/30 text-rose-800 dark:text-rose-200'
+                        };
+                        noticeEl.className = 'px-5 py-3 sm:px-6 border-b border-slate-200/80 dark:border-slate-800 text-xs sm:text-sm leading-relaxed space-y-1 ' + (toneClasses[tone] || toneClasses.info);
+                        noticeEl.innerHTML = '';
+                        messages.forEach(function (msg) {
+                            const p = document.createElement('p');
+                            p.textContent = msg;
+                            noticeEl.appendChild(p);
+                        });
+                    }
+                }
+
+                tbody.innerHTML = '';
+
+                if (!Array.isArray(rankedTeams) || rankedTeams.length === 0) {
+                    const tr = document.createElement('tr');
+                    const td = document.createElement('td');
+                    td.colSpan = 6;
+                    td.className = 'px-5 py-10 text-center text-sm font-medium text-slate-500 dark:text-slate-400';
+                    td.textContent = 'Belum ada keputusan acara yang disahkan rasmi.';
+                    tr.appendChild(td);
+                    tbody.appendChild(tr);
                     return;
                 }
 
-                isPrintInProgress = true;
-                printSheet.classList.remove('hidden');
-                document.body.classList.add('acm-print-active');
+                rankedTeams.forEach(function (team) {
+                    const tr = document.createElement('tr');
+                    let rowBgClass = 'hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors';
+                    let rankBadgeStyle = '';
+                    let rankBadgeClass = 'inline-flex items-center justify-center min-w-[34px] h-8 px-2.5 rounded-xl text-xs sm:text-sm font-display font-extrabold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700';
 
-                // Tunggu DOM & layout selesai sebelum memanggil window.print()
-                requestAnimationFrame(function () {
-                    requestAnimationFrame(function () {
-                        try {
-                            window.print();
-                        } catch (err) {
-                            console.error('[ACM Print] Ralat semasa memanggil window.print():', err);
-                            cleanupPrintSheet();
-                        }
-                    });
+                    if (team.rank === 1) {
+                        rowBgClass = 'bg-amber-50/55 dark:bg-amber-950/20 hover:bg-amber-50/90 dark:hover:bg-amber-950/30 transition-colors';
+                        rankBadgeStyle = 'background-color: #FBBF24; color: #0F172A; border-color: #F59E0B;';
+                        rankBadgeClass = 'inline-flex items-center justify-center min-w-[34px] h-8 px-2.5 rounded-xl text-xs sm:text-sm font-display font-extrabold border shadow-sm';
+                    } else if (team.rank === 2) {
+                        rowBgClass = 'bg-slate-100/70 dark:bg-slate-800/35 hover:bg-slate-100 dark:hover:bg-slate-800/55 transition-colors';
+                        rankBadgeStyle = 'background-color: #CBD5E1; color: #0F172A; border-color: #94A3B8;';
+                        rankBadgeClass = 'inline-flex items-center justify-center min-w-[34px] h-8 px-2.5 rounded-xl text-xs sm:text-sm font-display font-extrabold border shadow-sm';
+                    } else if (team.rank === 3) {
+                        rowBgClass = 'bg-orange-50/55 dark:bg-orange-950/20 hover:bg-orange-50/90 dark:hover:bg-orange-950/30 transition-colors';
+                        rankBadgeStyle = 'background-color: #CD7F32; color: #FFFFFF; border-color: #B45309;';
+                        rankBadgeClass = 'inline-flex items-center justify-center min-w-[34px] h-8 px-2.5 rounded-xl text-xs sm:text-sm font-display font-extrabold border shadow-sm';
+                    }
+
+                    tr.className = rowBgClass;
+
+                    // 1. Kedudukan
+                    const tdRank = document.createElement('td');
+                    tdRank.className = 'px-4 py-3.5 sm:px-5 text-center whitespace-nowrap';
+                    const rankSpan = document.createElement('span');
+                    rankSpan.className = rankBadgeClass;
+                    if (rankBadgeStyle) rankSpan.setAttribute('style', rankBadgeStyle);
+                    rankSpan.textContent = String(team.rank);
+                    tdRank.appendChild(rankSpan);
+                    tr.appendChild(tdRank);
+
+                    // 2. Pasukan (Jajar Kiri)
+                    const tdTeam = document.createElement('td');
+                    tdTeam.className = 'px-4 py-3.5 sm:px-5 text-left font-display font-bold text-navy-900 dark:text-white';
+                    tdTeam.textContent = team.pasukan;
+                    tr.appendChild(tdTeam);
+
+                    // 3. Emas (Jajar Tengah)
+                    const tdGold = document.createElement('td');
+                    tdGold.className = 'px-4 py-3.5 sm:px-5 text-center whitespace-nowrap font-semibold text-amber-700 dark:text-amber-300';
+                    tdGold.textContent = String(team.emas);
+                    tr.appendChild(tdGold);
+
+                    // 4. Perak (Jajar Tengah)
+                    const tdSilver = document.createElement('td');
+                    tdSilver.className = 'px-4 py-3.5 sm:px-5 text-center whitespace-nowrap font-semibold text-slate-700 dark:text-slate-200';
+                    tdSilver.textContent = String(team.perak);
+                    tr.appendChild(tdSilver);
+
+                    // 5. Gangsa (Jajar Tengah)
+                    const tdBronze = document.createElement('td');
+                    tdBronze.className = 'px-4 py-3.5 sm:px-5 text-center whitespace-nowrap font-semibold text-orange-800 dark:text-amber-500';
+                    tdBronze.textContent = String(team.gangsa);
+                    tr.appendChild(tdBronze);
+
+                    // 6. Jumlah Pingat (Jajar Tengah, Lebih Tebal)
+                    const tdTotal = document.createElement('td');
+                    tdTotal.className = 'px-4 py-3.5 sm:px-5 text-center whitespace-nowrap font-display text-base font-extrabold text-navy-900 dark:text-white';
+                    tdTotal.textContent = String(team.jumlah);
+                    tr.appendChild(tdTotal);
+
+                    tbody.appendChild(tr);
                 });
+            }
+
+            function refreshMedalStandings() {
+                const readiness = inspectMedalDataReadiness();
+                const collected = collectOfficialMedalResults();
+                const tallies = calculateMedalTally(collected.awards);
+                const ranked = rankMedalTeams(tallies);
+                renderMedalTable(ranked, readiness, collected.integrityIssues);
+            }
+
+            function syncPodiumViewOnOpen() {
+                // Muatkan modul dikonfigurasi yang belum mempunyai snapshot menggunakan fungsi sedia ada (dengan in-flight guard)
+                MEDAL_ELIGIBLE_MODULES.forEach(function (modKey) {
+                    const st = gasMemoryState[modKey];
+                    if (st && st.url && !st.snapshot && !st.inFlight) {
+                        loadModuleFromSavedUrl(modKey);
+                    }
+                });
+                refreshMedalStandings();
             }
 
             // =========================================================================
@@ -4451,32 +4550,35 @@
                         btn.classList.add('text-slate-300', 'hover:text-white', 'hover:bg-slate-800/70');
                     }
                 });
+
+                if (targetViewId === 'view-podium') {
+                    syncPodiumViewOnOpen();
+                }
             }
 
-            function closeMobileSidebar() {
-                const sidebar = document.getElementById('sidebar');
-                const backdrop = document.getElementById('mobile-sidebar-backdrop');
-                if (sidebar) sidebar.classList.add('-translate-x-full');
-                if (backdrop) backdrop.classList.add('hidden');
-            }
-
+            // Kawalan Navigasi & Sidebar (Desktop Collapsible & Mobile Drawer)
             function initNavigationAndSidebar() {
                 const navItems = document.querySelectorAll('.nav-item');
-                navItems.forEach(function (btn) {
-                    btn.addEventListener('click', function () {
-                        const viewId = btn.getAttribute('data-view');
-                        if (viewId) {
-                            navigateToView(viewId);
-                            closeMobileSidebar();
-                        }
-                    });
-                });
-
-                // Kawalan Sidebar Mobile
                 const btnOpenMobile = document.getElementById('btn-open-mobile-sidebar');
                 const btnCloseMobile = document.getElementById('btn-close-mobile-sidebar');
                 const backdrop = document.getElementById('mobile-sidebar-backdrop');
                 const sidebar = document.getElementById('sidebar');
+                const btnCollapse = document.getElementById('btn-collapse-sidebar');
+
+                function closeMobileSidebar() {
+                    if (sidebar) sidebar.classList.add('-translate-x-full');
+                    if (backdrop) backdrop.classList.add('hidden');
+                }
+
+                navItems.forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        const targetView = btn.getAttribute('data-view');
+                        if (targetView) {
+                            navigateToView(targetView);
+                        }
+                        closeMobileSidebar();
+                    });
+                });
 
                 if (btnOpenMobile && sidebar && backdrop) {
                     btnOpenMobile.addEventListener('click', function () {
@@ -4484,28 +4586,27 @@
                         backdrop.classList.remove('hidden');
                     });
                 }
+
                 if (btnCloseMobile) {
                     btnCloseMobile.addEventListener('click', closeMobileSidebar);
                 }
+
                 if (backdrop) {
                     backdrop.addEventListener('click', closeMobileSidebar);
                 }
 
-                // Kawalan Collapsible Sidebar Desktop
-                const btnCollapse = document.getElementById('btn-collapse-sidebar');
-                let isCollapsed = false;
                 if (btnCollapse && sidebar) {
                     btnCollapse.addEventListener('click', function () {
-                        isCollapsed = !isCollapsed;
+                        const isCollapsed = sidebar.classList.contains('w-20');
                         const labels = sidebar.querySelectorAll('.sidebar-label');
                         if (isCollapsed) {
-                            sidebar.classList.remove('w-72');
-                            sidebar.classList.add('w-20');
-                            labels.forEach(function (el) { el.classList.add('hidden'); });
-                        } else {
                             sidebar.classList.remove('w-20');
                             sidebar.classList.add('w-72');
                             labels.forEach(function (el) { el.classList.remove('hidden'); });
+                        } else {
+                            sidebar.classList.remove('w-72');
+                            sidebar.classList.add('w-20');
+                            labels.forEach(function (el) { el.classList.add('hidden'); });
                         }
                     });
                 }
@@ -4518,6 +4619,7 @@
                 navigateToView('view-saringan');
                 syncHeaderFromStorage();
                 initGasIntegration();
+                refreshMedalStandings();
                 window.addEventListener('afterprint', cleanupPrintSheet);
                 if (window.lucide && typeof window.lucide.createIcons === 'function') {
                     window.lucide.createIcons();
