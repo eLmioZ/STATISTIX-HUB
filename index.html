@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATHLETICS CHAMPIONSHIP MANAGER — Sistem Pengurusan Keputusan Kejohanan Olahraga</title>
+    <title>STATISTIX HUB — Sistem Pengurusan Keputusan Rasmi</title>
     
     <!-- Tipografi Moden: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,48 +91,90 @@
         }
 
         /* Mod Cetakan */
+        @page {
+            size: A4 landscape;
+            margin: 10mm;
+        }
         @media print {
             .no-print {
                 display: none !important;
             }
-            body {
-                background: #FFFFFF !important;
-                color: #000000 !important;
-            }
-            body.acm-print-active * {
-                visibility: hidden !important;
-            }
-            body.acm-print-active #acm-print-sheet,
-            body.acm-print-active #acm-print-sheet * {
-                visibility: visible !important;
-            }
-            body.acm-print-active #acm-print-sheet {
-                position: absolute !important;
-                left: 0 !important;
-                top: 0 !important;
-                width: 100% !important;
+            html, body {
                 background: #FFFFFF !important;
                 color: #0F172A !important;
-                padding: 12mm !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100% !important;
+                height: auto !important;
+                overflow: visible !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            body.acm-print-active > *:not(#acm-print-sheet) {
+                display: none !important;
+            }
+            body.acm-print-active #acm-print-sheet {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                position: static !important;
+                width: 100% !important;
+                max-width: none !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+                background: #FFFFFF !important;
+                color: #0F172A !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+            }
+            #acm-print-sheet * {
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+            #acm-print-sheet .acm-print-section {
+                margin-bottom: 14px !important;
+                overflow: visible !important;
+                height: auto !important;
+                max-height: none !important;
             }
             #acm-print-sheet table {
                 width: 100% !important;
+                table-layout: auto !important;
                 border-collapse: collapse !important;
                 page-break-inside: auto !important;
+                background: #FFFFFF !important;
             }
             #acm-print-sheet thead {
                 display: table-header-group !important;
             }
+            #acm-print-sheet tbody {
+                display: table-row-group !important;
+            }
             #acm-print-sheet tr {
+                break-inside: avoid !important;
                 page-break-inside: avoid !important;
                 page-break-after: auto !important;
             }
-            #acm-print-sheet th,
-            #acm-print-sheet td {
-                border: 1px solid #CBD5E1 !important;
-                padding: 6px 8px !important;
-                font-size: 11px !important;
+            #acm-print-sheet th {
+                background: #F1F5F9 !important;
                 color: #0F172A !important;
+                border: 1px solid #94A3B8 !important;
+                padding: 5px 6px !important;
+                font-size: 10px !important;
+                font-weight: 700 !important;
+                text-align: left !important;
+                white-space: nowrap !important;
+            }
+            #acm-print-sheet td {
+                background: #FFFFFF !important;
+                color: #0F172A !important;
+                border: 1px solid #CBD5E1 !important;
+                padding: 5px 6px !important;
+                font-size: 10px !important;
+                vertical-align: middle !important;
+                word-break: break-word !important;
             }
         }
     </style>
@@ -156,8 +198,8 @@
                             <i data-lucide="trophy" class="w-5 h-5 text-white"></i>
                         </div>
                         <div class="sidebar-label transition-opacity duration-200 truncate">
-                            <span class="font-display font-extrabold text-sm tracking-wide block text-white leading-tight">ATHLETICS</span>
-                            <span class="text-[11px] font-medium text-cyan tracking-wider uppercase">Championship Mgr</span>
+                            <span class="font-display font-extrabold text-sm tracking-wide block text-white leading-tight">STATISTIX HUB</span>
+                            <span class="text-[11px] font-medium text-cyan tracking-wider uppercase">Sistem Keputusan Rasmi</span>
                         </div>
                     </div>
                     <!-- Butang Kecilkan Sidebar (Desktop) -->
@@ -216,23 +258,10 @@
                     </button>
                 </nav>
             </div>
-
-            <!-- Bahagian Bawah Sidebar: Info Fasa & Storan -->
-            <div class="p-4 border-t border-slate-800/80">
-                <div class="bg-slate-800/60 rounded-2xl p-3.5 border border-slate-700/50">
-                    <div class="flex items-center gap-2.5">
-                        <span class="w-2.5 h-2.5 rounded-full bg-cyan shrink-0"></span>
-                        <span class="sidebar-label text-xs font-semibold text-slate-200 truncate">Fasa 1A: Clean Base</span>
-                    </div>
-                    <p class="sidebar-label text-[11px] text-slate-400 mt-1.5 leading-relaxed">
-                        Kerangka utama SPA & LocalStorage sedia untuk pembinaan modul.
-                    </p>
-                </div>
-            </div>
         </aside>
 
         <!-- KANDUNGAN KANAN (HEADER + PAPARAN UTAMA) -->
-        <div class="flex-1 flex flex-col min-w-0">
+        <div class="flex-1 flex flex-col min-w-0 min-h-screen">
 
             <!-- HEADER UTAMA -->
             <header class="no-print sticky top-0 z-30 h-20 bg-white/85 dark:bg-navy-900/85 glass-header border-b border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
@@ -252,7 +281,7 @@
                     <div class="min-w-0">
                         <div class="flex items-center gap-2 flex-wrap">
                             <h1 id="header-tournament-name" class="font-display font-bold text-sm sm:text-base text-navy-900 dark:text-white truncate">
-                                ATHLETICS CHAMPIONSHIP MANAGER
+                                STATISTIX HUB
                             </h1>
                             <span id="header-tournament-year" class="px-2 py-0.5 text-[11px] font-bold rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
                                 ----
@@ -1013,7 +1042,7 @@
                                             </div>
                                         </div>
                                         <div class="flex flex-wrap items-center gap-2">
-                                            <button type="button" id="btn-gas-test-saringan" data-gas-action="test" data-gas-module="saringan" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-royal/30 text-royal dark:text-cyan dark:border-cyan/30 bg-royal/5 dark:bg-cyan/10 hover:bg-royal/15 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
+                                            <button type="button" id="btn-gas-test-saringan" data-gas-action="test" data-gas-module="saringan" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-royal/30 text-royal dark:text-cyan bg-royal/5 hover:bg-royal/15 transition-all disabled:opacity-45 disabled:cursor-not-allowed">
                                                 <i data-lucide="wifi" class="w-3.5 h-3.5"></i>
                                                 <span>Uji</span>
                                             </button>
@@ -1212,80 +1241,64 @@
 
             </main>
 
-            <!-- FOOTER RINGKAS -->
-            <footer class="no-print border-t border-slate-200/80 dark:border-slate-800 px-6 py-4 text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-2">
-                <span>ATHLETICS CHAMPIONSHIP MANAGER • Sistem Pengurusan Keputusan Kejohanan Olahraga</span>
-                <span>Fasa 1B — Direct Google Apps Script Integration • Storan Pelayar Tempatan</span>
+            <!-- GLOBAL FOOTER -->
+            <footer id="global-footer" class="no-print w-full mt-auto border-t border-slate-200/80 dark:border-slate-800 bg-white/80 dark:bg-navy-900/80 px-4 sm:px-6 lg:px-8 py-4 text-center text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                Hak Cipta Terpelihara @ 2026 eL_mioZ AthletiX Management
             </footer>
 
         </div>
     </div>
 
-    <!-- MODAL KOD GAS & PANDUAN DEPLOYMENT -->
+    <!-- MODAL KOD GOOGLE APPS SCRIPT -->
     <div id="acm-gas-code-modal" role="dialog" aria-modal="true" aria-labelledby="acm-gas-modal-title" class="no-print fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/70 backdrop-blur-sm">
-        <div class="w-full max-w-4xl max-h-[90vh] rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col overflow-hidden">
-            <div class="px-5 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3 bg-slate-50/80 dark:bg-slate-800/60">
+        <div class="w-full max-w-4xl max-h-[90vh] flex flex-col rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden">
+            <div class="px-5 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/70 flex flex-wrap items-center justify-between gap-3">
                 <div class="flex items-center gap-2.5">
-                    <div class="w-9 h-9 rounded-xl bg-navy-900 dark:bg-royal text-white flex items-center justify-center">
-                        <i data-lucide="file-code-2" class="w-5 h-5"></i>
+                    <div class="w-8 h-8 rounded-lg bg-royal/10 text-royal dark:bg-cyan/15 dark:text-cyan flex items-center justify-center">
+                        <i data-lucide="code-2" class="w-4 h-4"></i>
                     </div>
-                    <div>
-                        <h3 id="acm-gas-modal-title" class="font-display text-base sm:text-lg font-extrabold text-navy-900 dark:text-white">KOD GOOGLE APPS SCRIPT</h3>
-                        <p id="acm-gas-modal-subtitle" class="text-xs text-slate-500 dark:text-slate-400">Salin terus ke dalam Code.gs</p>
-                    </div>
+                    <h3 id="acm-gas-modal-title" class="font-display text-sm sm:text-base font-extrabold text-navy-900 dark:text-white">KOD GOOGLE APPS SCRIPT</h3>
                 </div>
                 <div class="flex items-center gap-2">
-                    <button type="button" id="btn-acm-copy-gas-code" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald text-white shadow-sm hover:bg-emerald/90 transition-all">
+                    <button type="button" id="btn-acm-copy-gas-code" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-royal text-white hover:bg-royal/90 transition-all">
                         <i data-lucide="copy" class="w-3.5 h-3.5"></i>
                         <span id="btn-acm-copy-gas-label">Salin Kod</span>
                     </button>
-                    <button type="button" id="btn-acm-close-gas-modal" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all">
-                        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+                    <button type="button" id="btn-acm-close-gas-modal" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+                        <i data-lucide="x" class="w-4 h-4"></i>
                         <span>Tutup</span>
                     </button>
                 </div>
             </div>
-            <div class="p-5 overflow-y-auto space-y-5 text-xs sm:text-sm">
-                <!-- Amaran Keselamatan & Routing -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                    <div class="rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 p-3.5 text-amber-900 dark:text-amber-200 space-y-1 text-xs">
-                        <p class="font-bold">Amaran Keselamatan Endpoint Awam & Whitelist</p>
-                        <p>Endpoint tanpa autentikasi boleh diakses oleh sesiapa yang mengetahui URL <code class="font-mono">/exec</code>. Whitelist sel dalam kod ini hanya mengehadkan kawasan penulisan sel—ia bukan sistem autentikasi pengguna dan tidak menentukan identiti pegawai yang mengubah keputusan.</p>
+            <div class="p-5 overflow-y-auto space-y-4 text-xs sm:text-sm">
+                    <div class="rounded-xl bg-amber-50/90 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 p-3.5 text-amber-900 dark:text-amber-200 space-y-1">
+                        <p class="font-bold">Amaran Keselamatan &amp; Nota Deployment</p>
+                        <p>Endpoint Web App tanpa autentikasi boleh diakses oleh sesiapa yang mengetahui URL <code class="font-mono">/exec</code>. Jika dua modul berkongsi fail Google Sheets yang sama, gabungkan logik dengan routing yang sesuai atau gunakan projek Apps Script berasingan (jangan wujudkan fungsi <code class="font-mono">doGet()</code> atau <code class="font-mono">doPost()</code> bertindih dalam projek yang sama).</p>
                     </div>
-                    <div class="rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800/60 p-3.5 text-blue-900 dark:text-blue-200 space-y-1 text-xs">
-                        <p class="font-bold">Nota Fail Google Sheets Yang Sama</p>
-                        <p>Jika dua modul menggunakan fail Google Sheets yang sama, gunakan projek Apps Script / deployment yang berasingan atau gabungkan skrip dengan routing parameter <code class="font-mono">module</code> yang sesuai. <strong>Jangan</strong> wujudkan beberapa fungsi <code class="font-mono">doGet()</code> atau <code class="font-mono">doPost()</code> bertindih dalam projek skrip yang sama.</p>
-                    </div>
-                </div>
 
-                <!-- Pemetaan Tab & Julat Sel + Panduan Pemasangan & Deployment -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 p-4 space-y-2">
-                        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-navy-900 dark:text-white">Pemetaan Tab & Julat Sel</h4>
-                        <div id="acm-gas-modal-mapping" class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 leading-relaxed"></div>
-                    </div>
-                    <div class="rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 p-4 space-y-2">
-                        <h4 class="font-display font-bold text-xs uppercase tracking-wider text-navy-900 dark:text-white">Panduan Pemasangan & Deployment Web App</h4>
-                        <ol class="list-decimal list-inside text-xs text-slate-600 dark:text-slate-300 space-y-1 leading-relaxed">
+                    <div id="acm-gas-modal-mapping" class="rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 p-3.5 space-y-1.5 text-xs text-slate-700 dark:text-slate-200"></div>
+
+                    <details class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 p-3.5 text-xs text-slate-600 dark:text-slate-300">
+                        <summary class="font-bold text-navy-900 dark:text-white cursor-pointer">Panduan Pemasangan &amp; Deployment Google Apps Script</summary>
+                        <ol class="list-decimal list-inside mt-2.5 space-y-1 leading-relaxed">
                             <li>Buka fail Google Sheets yang berkaitan.</li>
-                            <li>Pilih <strong>Extensions</strong> &rarr; <strong>Apps Script</strong>.</li>
-                            <li>Salin kod daripada butang <strong>Salin Kod</strong> dan tampalkan ke dalam <code class="font-mono">Code.gs</code>.</li>
-                            <li>Lengkapkan konfigurasi <code class="font-mono">SPREADSHEET_ID</code> dalam kod jika diperlukan (jika skrip tidak terikat terus pada helaian).</li>
-                            <li>Simpan projek, pilih <strong>Deploy</strong> &rarr; <strong>New Deployment</strong> &rarr; <strong>Web App</strong>.</li>
-                            <li>Pilih <strong>Execute as: Me</strong> jika pemilik spreadsheet meluluskan akses tersebut.</li>
-                            <li>Untuk akses tanpa log masuk, pilih <strong>Anyone</strong> hanya jika dibenarkan oleh polisi organisasi dan data sesuai untuk akses awam.</li>
-                            <li>Lengkapkan kebenaran standard Google Apps Script, salin URL Web App (<code class="font-mono">/exec</code>), tampalkan ke dalam Panel Admin dan tekan <strong>Uji</strong> atau <strong>Simpan</strong>.</li>
+                            <li>Pilih <strong>Extensions &rarr; Apps Script</strong>.</li>
+                            <li>Klik butang <strong>Salin Kod</strong> di atas dan tampalkan ke dalam <code class="font-mono">Code.gs</code>.</li>
+                            <li>Isi <code class="font-mono">SPREADSHEET_ID</code> di bahagian atas kod sekiranya skrip tidak terikat terus pada helaian.</li>
+                            <li>Simpan projek dan pilih <strong>Deploy &rarr; New Deployment &rarr; Web App</strong>.</li>
+                            <li>Tetapkan <strong>Execute as: Me</strong> (jika diluluskan pemilik helaian) dan <strong>Who has access: Anyone</strong> (jika dibenarkan polisi organisasi dan sesuai untuk akses awam).</li>
+                            <li>Lengkapkan kebenaran standard Google Apps Script dan salin URL yang berakhir dengan <code class="font-mono">/exec</code>.</li>
+                            <li>Tampalkan URL ke dalam <strong>Panel Admin &rarr; Pengurusan Acara</strong> dan tekan <strong>Uji</strong> atau <strong>Simpan</strong>.</li>
                         </ol>
-                    </div>
-                </div>
+                    </details>
 
-                <!-- Kod GAS Lengkap -->
-                <div>
-                    <div class="flex items-center justify-between mb-1.5">
-                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Kod Lengkap Code.gs</span>
-                        <span id="acm-gas-modal-const-name" class="text-xs font-mono text-royal dark:text-cyan"></span>
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Kod Sumber Code.gs</span>
+                            <span id="acm-gas-modal-const-name" class="text-xs font-mono font-semibold text-royal dark:text-cyan"></span>
+                        </div>
+                        <pre id="acm-gas-modal-code-block" class="p-4 rounded-xl bg-navy-950 text-slate-100 text-xs font-mono overflow-x-auto max-h-80 leading-relaxed select-all"></pre>
                     </div>
-                    <pre class="rounded-xl bg-navy-950 text-slate-100 p-4 overflow-x-auto text-xs font-mono leading-relaxed border border-slate-800 max-h-[340px]"><code id="acm-gas-modal-code-block"></code></pre>
                 </div>
             </div>
         </div>
@@ -1293,49 +1306,50 @@
 
     <!-- MODAL PENGESAHAN TINDAKAN -->
     <div id="acm-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="acm-confirm-title" class="no-print fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/70 backdrop-blur-sm">
-        <div class="w-full max-w-md rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-6 space-y-4">
-            <div class="flex items-start gap-3.5">
-                <div class="w-10 h-10 rounded-xl bg-rose-500/15 text-rose-600 dark:text-rose-400 flex items-center justify-center shrink-0">
+        <div class="w-full max-w-md rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-5 sm:p-6 space-y-4">
+            <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
                     <i data-lucide="alert-triangle" class="w-5 h-5"></i>
                 </div>
-                <div class="space-y-1">
-                    <h3 id="acm-confirm-title" class="font-display text-base font-extrabold text-navy-900 dark:text-white">Sahkan Tindakan</h3>
-                    <p id="acm-confirm-message" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+                <div>
+                    <h3 id="acm-confirm-title" class="font-display text-base font-extrabold text-navy-900 dark:text-white">Pengesahan Tindakan</h3>
+                    <p id="acm-confirm-message" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed"></p>
                 </div>
             </div>
             <div class="flex items-center justify-end gap-2.5 pt-2">
-                <button type="button" id="btn-acm-confirm-cancel" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">Batal</button>
-                <button type="button" id="btn-acm-confirm-ok" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-rose-600 text-white hover:bg-rose-700 shadow-sm transition-all">Sahkan</button>
+                <button type="button" id="btn-acm-confirm-cancel" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Batal</button>
+                <button type="button" id="btn-acm-confirm-ok" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-royal text-white hover:bg-royal/90 transition-all">Sahkan</button>
             </div>
         </div>
     </div>
 
-    <!-- KONTENA CETAKAN KHUSUS -->
-    <div id="acm-print-sheet" class="hidden print:block"></div>
+    <!-- HELAIAN CETAKAN BERSIH (DIPAPARKAN HANYA KETIKA @media print) -->
+    <div id="acm-print-sheet" class="hidden"></div>
 
-    <!-- ===================================================================== -->
-    <!-- SKRIP KERANGKA UTAMA SPA, TEMA & INTEGRASI DIRECT GOOGLE APPS SCRIPT   -->
-    <!-- ===================================================================== -->
+    <!-- SKRIP KERANGKA UTAMA SPA, TEMA, LOCALSTORAGE & INTEGRASI GAS -->
     <script>
         (function () {
             'use strict';
 
-            // Pengawal Inisialisasi Tunggal
-            if (window.__ACM_CLEAN_BASE_INITIALIZED__) return;
-            window.__ACM_CLEAN_BASE_INITIALIZED__ = true;
+            // Pengawal inisialisasi tunggal bagi mengelakkan duplicate initialization
+            if (window.__ACM_BASE_INITIALIZED__) return;
+            window.__ACM_BASE_INITIALIZED__ = true;
 
+            // Senarai key LocalStorage rasmi aplikasi
             const STORAGE_KEYS = {
                 SETTINGS: 'athletics_settings',
                 TEAMS: 'athletics_teams',
                 CATEGORIES: 'athletics_categories',
                 EVENTS: 'athletics_events',
                 ATHLETES: 'athletics_athletes',
+                ENTRIES: 'athletics_entries',
                 HEAT_RESULTS: 'athletics_heat_results',
                 FINAL_RESULTS: 'athletics_final_results',
                 RELAY_RESULTS: 'athletics_relay_results',
                 FIELD_RESULTS: 'athletics_field_results',
                 RECORDS: 'athletics_records',
                 PREFERENCES: 'athletics_preferences',
+                SCHEMA_VERSION: 'athletics_schema_version',
                 GAS_SARINGAN_URL: 'athletics_gas_saringan_url',
                 GAS_AKHIR_URL: 'athletics_gas_akhir_balapan_url',
                 GAS_RELAY_URL: 'athletics_gas_relay_url',
@@ -1343,16 +1357,35 @@
                 GAS_OFFICIAL_CONFIRMATIONS: 'athletics_gas_official_confirmations'
             };
 
+            // Konfigurasi warna identiti bagi keenam-enam paparan
             const ACCENT_STYLES = {
-                royal: { nav: ['bg-royal', 'text-white', 'shadow-md', 'shadow-royal/25'], dot: 'bg-royal' },
-                emerald: { nav: ['bg-emerald', 'text-white', 'shadow-md', 'shadow-emerald/25'], dot: 'bg-emerald' },
-                purple: { nav: ['bg-purple', 'text-white', 'shadow-md', 'shadow-purple/25'], dot: 'bg-purple' },
-                orange: { nav: ['bg-orange', 'text-white', 'shadow-md', 'shadow-orange/25'], dot: 'bg-orange' },
-                gold: { nav: ['bg-amber-500', 'text-navy-950', 'shadow-md', 'shadow-amber-500/25'], dot: 'bg-gold' },
-                navy: { nav: ['bg-slate-800', 'text-white', 'shadow-md', 'border', 'border-slate-700'], dot: 'bg-royal' }
+                royal: {
+                    nav: ['bg-royal', 'text-white', 'shadow-md', 'shadow-royal/25'],
+                    dot: 'bg-royal'
+                },
+                emerald: {
+                    nav: ['bg-emerald', 'text-white', 'shadow-md', 'shadow-emerald/25'],
+                    dot: 'bg-emerald'
+                },
+                purple: {
+                    nav: ['bg-purple', 'text-white', 'shadow-md', 'shadow-purple/25'],
+                    dot: 'bg-purple'
+                },
+                orange: {
+                    nav: ['bg-orange', 'text-white', 'shadow-md', 'shadow-orange/25'],
+                    dot: 'bg-orange'
+                },
+                gold: {
+                    nav: ['bg-amber-500', 'text-navy-950', 'shadow-md', 'shadow-amber-500/25'],
+                    dot: 'bg-gold'
+                },
+                navy: {
+                    nav: ['bg-slate-800', 'text-white', 'shadow-md', 'border', 'border-slate-700'],
+                    dot: 'bg-cyan'
+                }
             };
 
-            // Konfigurasi Visual Status Data (Google Apps Script)
+            // Konfigurasi Status Data Google Apps Script
             const DATA_STATUS_STATES = {
                 disconnected: {
                     label: 'Belum Disambungkan',
@@ -1362,42 +1395,42 @@
                 loading: {
                     label: 'Sedang Membaca Data',
                     dot: 'bg-royal animate-pulse',
-                    badge: 'bg-blue-50 text-royal dark:bg-blue-950/50 dark:text-cyan border-blue-200/80 dark:border-blue-800/60'
+                    badge: 'bg-blue-50 text-royal dark:bg-blue-950/60 dark:text-cyan border-blue-200 dark:border-blue-800/70'
                 },
                 success: {
                     label: 'Data Berjaya Dimuatkan',
                     dot: 'bg-emerald',
-                    badge: 'bg-emerald-50 text-emerald dark:bg-emerald-950/50 dark:text-emerald-400 border-emerald-200/80 dark:border-emerald-800/60'
+                    badge: 'bg-emerald-50 text-emerald dark:bg-emerald-950/60 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800/70'
                 },
                 saving: {
                     label: 'Sedang Menyimpan',
                     dot: 'bg-royal animate-pulse',
-                    badge: 'bg-blue-50 text-royal dark:bg-blue-950/50 dark:text-cyan border-blue-200/80 dark:border-blue-800/60'
+                    badge: 'bg-blue-50 text-royal dark:bg-blue-950/60 dark:text-cyan border-blue-200 dark:border-blue-800/70'
                 },
                 saved: {
                     label: 'Perubahan Berjaya Disimpan',
                     dot: 'bg-emerald',
-                    badge: 'bg-emerald-50 text-emerald dark:bg-emerald-950/50 dark:text-emerald-400 border-emerald-200/80 dark:border-emerald-800/60'
+                    badge: 'bg-emerald-50 text-emerald dark:bg-emerald-950/60 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800/70'
                 },
                 incomplete: {
                     label: 'Data Tidak Lengkap',
                     dot: 'bg-orange',
-                    badge: 'bg-orange-50 text-orange dark:bg-orange-950/50 dark:text-amber-400 border-orange-200/80 dark:border-orange-800/60'
+                    badge: 'bg-orange-50 text-orange dark:bg-orange-950/60 dark:text-amber-400 border-orange-200 dark:border-orange-800/70'
                 },
                 conflict: {
                     label: 'Konflik Data',
-                    dot: 'bg-amber-500',
-                    badge: 'bg-amber-50 text-amber-700 dark:bg-amber-950/50 dark:text-amber-300 border-amber-200/80 dark:border-amber-800/60'
+                    dot: 'bg-orange',
+                    badge: 'bg-orange-50 text-orange dark:bg-orange-950/60 dark:text-amber-400 border-orange-200 dark:border-orange-800/70'
                 },
                 cached: {
-                    label: 'Menggunakan Data Cache',
+                    label: 'Menggunakan data cache',
                     dot: 'bg-orange',
-                    badge: 'bg-orange-50 text-orange dark:bg-orange-950/50 dark:text-amber-400 border-orange-200/80 dark:border-orange-800/60'
+                    badge: 'bg-orange-50 text-orange dark:bg-orange-950/60 dark:text-amber-400 border-orange-200 dark:border-orange-800/70'
                 },
                 error: {
                     label: 'Sambungan Gagal',
                     dot: 'bg-rose-500',
-                    badge: 'bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400 border-rose-200/80 dark:border-rose-800/60'
+                    badge: 'bg-rose-50 text-rose-600 dark:bg-rose-950/60 dark:text-rose-400 border-rose-200 dark:border-rose-800/70'
                 }
             };
 
@@ -3833,41 +3866,112 @@
                 );
             }
 
+            let isPrintInProgress = false;
+
+            function cleanupPrintSheet() {
+                const printSheet = document.getElementById('acm-print-sheet');
+                document.body.classList.remove('acm-print-active');
+                if (printSheet) {
+                    printSheet.classList.add('hidden');
+                    printSheet.innerHTML = '';
+                }
+                isPrintInProgress = false;
+            }
+
             function handlePrintGenderSection(moduleKey, genderKey) {
+                if (isPrintInProgress) return;
+
                 const cfg = GAS_MODULE_CONFIGS[moduleKey];
                 const st = gasMemoryState[moduleKey];
                 const printSheet = document.getElementById('acm-print-sheet');
-                const sourceGroups = document.getElementById('groups-' + moduleKey + '-' + genderKey);
-                if (!cfg || !st || !st.snapshot || !printSheet || !sourceGroups) return;
+                if (!cfg || !st || !printSheet) {
+                    console.error('[ACM Print] Konfigurasi modul atau kontena cetakan tidak ditemui.', { moduleKey: moduleKey, genderKey: genderKey });
+                    return;
+                }
+
+                // Pastikan printSheet merupakan direct child kepada body supaya tidak terlindung oleh #app-wrapper
+                if (printSheet.parentElement !== document.body) {
+                    document.body.appendChild(printSheet);
+                }
+
+                if (!st.snapshot || !Array.isArray(st.snapshot.events)) {
+                    console.error('[ACM Print] Tiada snapshot data tersedia untuk cetakan.', { moduleKey: moduleKey });
+                    setAdminCardFeedback(moduleKey, 'error', 'Tiada data keputusan yang tersedia bagi acara yang dipilih.');
+                    return;
+                }
+
+                // Elakkan mencetak jika ada pengeditan sel atau penyimpanan sedang berlangsung
+                const statusPanel = document.getElementById('status-panel-' + moduleKey);
+                const panelState = statusPanel ? statusPanel.getAttribute('data-status-state') : '';
+                if (st.activeEditCellKey || st.inFlight || panelState === 'saving') {
+                    console.error('[ACM Print] Cetakan ditangguhkan kerana proses pengeditan atau penyimpanan sedang berjalan.');
+                    return;
+                }
+
+                const normalizedGender = String(genderKey || '').trim().toLowerCase();
+                if (normalizedGender !== 'lelaki' && normalizedGender !== 'perempuan') {
+                    console.error('[ACM Print] Kategori jantina tidak sah:', genderKey);
+                    return;
+                }
+
+                const eventCode = String(st.selectedEventCode || '').trim();
+                if (!eventCode) {
+                    console.error('[ACM Print] Tiada kod acara aktif dipilih.');
+                    return;
+                }
+
+                const matchingEvents = st.snapshot.events.filter(function (ev) {
+                    return String(ev.sheetName || ev.eventCode || '').trim() === eventCode;
+                });
+                if (matchingEvents.length === 0) {
+                    console.error('[ACM Print] Acara aktif tidak ditemui dalam memory state:', eventCode);
+                    return;
+                }
 
                 const tournamentNameEl = document.getElementById('header-tournament-name');
                 const tournamentYearEl = document.getElementById('header-tournament-year');
-                const eventCode = String(st.selectedEventCode || '');
-                const isConfirmed = isGenderOfficiallyConfirmed(moduleKey, genderKey, eventCode);
+                const isConfirmed = isGenderOfficiallyConfirmed(moduleKey, normalizedGender, eventCode);
+
+                // Tetapkan orientasi kertas cadangan mengikut modul (Portrait untuk Relay, Landscape untuk Saringan/Akhir/Padang)
+                let dynamicPageStyle = document.getElementById('acm-dynamic-page-style');
+                if (!dynamicPageStyle) {
+                    dynamicPageStyle = document.createElement('style');
+                    dynamicPageStyle.id = 'acm-dynamic-page-style';
+                    document.head.appendChild(dynamicPageStyle);
+                }
+                const pageOrientation = moduleKey === 'relay' ? 'portrait' : 'landscape';
+                dynamicPageStyle.textContent = '@page { size: A4 ' + pageOrientation + '; margin: 10mm; }';
 
                 printSheet.innerHTML = '';
 
+                // Kepala Dokumen Cetakan
                 const headerBox = document.createElement('div');
-                headerBox.style.marginBottom = '14px';
+                headerBox.style.marginBottom = '12px';
                 headerBox.style.borderBottom = '2px solid #0F172A';
                 headerBox.style.paddingBottom = '8px';
 
                 const h1 = document.createElement('h1');
-                h1.style.fontSize = '16px';
+                h1.style.fontSize = '15px';
                 h1.style.fontWeight = '800';
-                h1.textContent = (tournamentNameEl ? tournamentNameEl.textContent.trim() : 'ATHLETICS CHAMPIONSHIP MANAGER') +
+                h1.style.margin = '0';
+                h1.textContent = (tournamentNameEl ? tournamentNameEl.textContent.trim() : 'STATISTIX HUB') +
                     ' (' + (tournamentYearEl ? tournamentYearEl.textContent.trim() : '----') + ')';
 
+                const eventDisplayName = cfg.displayNames && cfg.displayNames[eventCode]
+                    ? cfg.displayNames[eventCode] + ' (' + eventCode + ')'
+                    : eventCode;
+
                 const h2 = document.createElement('h2');
-                h2.style.fontSize = '14px';
+                h2.style.fontSize = '13px';
                 h2.style.fontWeight = '700';
-                h2.style.marginTop = '4px';
-                h2.textContent = cfg.title + (eventCode ? ' [' + eventCode + ']' : '') + ' — KATEGORI ' + genderKey.toUpperCase();
+                h2.style.margin = '4px 0 0 0';
+                h2.textContent = cfg.title + ' — ACARA: ' + eventDisplayName + ' | KATEGORI: ' + normalizedGender.toUpperCase();
 
                 const meta = document.createElement('p');
-                meta.style.fontSize = '11px';
-                meta.style.marginTop = '4px';
-                meta.textContent = 'Status Pengesahan: ' + (isConfirmed ? 'DISAHKAN RASMI (REKOD TEMPATAN)' : 'BELUM DISAHKAN RASMI') +
+                meta.style.fontSize = '10px';
+                meta.style.margin = '4px 0 0 0';
+                meta.style.color = '#334155';
+                meta.textContent = 'Status Pengesahan: ' + (isConfirmed ? 'DISAHKAN RASMI' : 'BELUM DISAHKAN') +
                     ' | Dicetak pada: ' + formatLocalTimestamp(new Date());
 
                 headerBox.appendChild(h1);
@@ -3875,15 +3979,127 @@
                 headerBox.appendChild(meta);
                 printSheet.appendChild(headerBox);
 
-                const clonedContent = sourceGroups.cloneNode(true);
-                printSheet.appendChild(clonedContent);
+                let expectedTotalRecords = 0;
 
+                // Bina Jadual Lengkap Terus daripada Memory State (Tanpa Sekatan Overflow/Scroll)
+                matchingEvents.forEach(function (ev) {
+                    const groups = (Array.isArray(ev.groups) ? ev.groups : []).filter(function (g) {
+                        return String(g.gender || '').trim().toLowerCase() === normalizedGender;
+                    });
+
+                    groups.forEach(function (grp) {
+                        const sectionDiv = document.createElement('div');
+                        sectionDiv.className = 'acm-print-section';
+
+                        if (moduleKey === 'saringan' && grp.heat !== undefined && grp.heat !== null) {
+                            const heatTitle = document.createElement('p');
+                            heatTitle.style.fontSize = '11px';
+                            heatTitle.style.fontWeight = '700';
+                            heatTitle.style.margin = '0 0 5px 0';
+                            heatTitle.style.textTransform = 'uppercase';
+                            heatTitle.textContent = 'Pusingan: Saringan ' + String(grp.heat);
+                            sectionDiv.appendChild(heatTitle);
+                        }
+
+                        const table = document.createElement('table');
+                        const thead = document.createElement('thead');
+                        const headRow = document.createElement('tr');
+
+                        cfg.columns.forEach(function (colDef) {
+                            const th = document.createElement('th');
+                            th.textContent = colDef.label;
+                            headRow.appendChild(th);
+                        });
+                        thead.appendChild(headRow);
+                        table.appendChild(thead);
+
+                        const tbody = document.createElement('tbody');
+                        const records = Array.isArray(grp.records) ? grp.records : [];
+                        expectedTotalRecords += records.length;
+
+                        if (records.length === 0) {
+                            const emptyTr = document.createElement('tr');
+                            const emptyTd = document.createElement('td');
+                            emptyTd.colSpan = cfg.columns.length;
+                            emptyTd.style.fontStyle = 'italic';
+                            emptyTd.textContent = 'Tiada rekod peserta dalam julat ini.';
+                            emptyTr.appendChild(emptyTd);
+                            tbody.appendChild(emptyTr);
+                        } else {
+                            records.forEach(function (rec) {
+                                const tr = document.createElement('tr');
+                                cfg.columns.forEach(function (colDef) {
+                                    const td = document.createElement('td');
+                                    const val = rec.data && rec.data[colDef.key] !== undefined && rec.data[colDef.key] !== null
+                                        ? String(rec.data[colDef.key]).trim()
+                                        : '';
+                                    td.textContent = val;
+                                    tr.appendChild(td);
+                                });
+                                tbody.appendChild(tr);
+                            });
+                        }
+
+                        table.appendChild(tbody);
+                        sectionDiv.appendChild(table);
+                        printSheet.appendChild(sectionDiv);
+                    });
+                });
+
+                // Maklumat Hak Cipta di Penghujung Dokumen Cetakan
+                const printFooter = document.createElement('div');
+                printFooter.style.marginTop = '14px';
+                printFooter.style.paddingTop = '8px';
+                printFooter.style.borderTop = '1px solid #CBD5E1';
+                printFooter.style.textAlign = 'center';
+                printFooter.style.fontSize = '10px';
+                printFooter.style.color = '#475569';
+                printFooter.textContent = 'Hak Cipta Terpelihara @ 2026 eL_mioZ AthletiX Management';
+                printSheet.appendChild(printFooter);
+
+                // PRE-PRINT VALIDATION: Sahkan jadual, thead, tbody, kolum dan baris sebelum window.print()
+                const builtTables = printSheet.querySelectorAll('table');
+                let builtDataRowCount = 0;
+                let hasValidStructure = builtTables.length > 0 && expectedTotalRecords > 0;
+
+                builtTables.forEach(function (tbl) {
+                    const thCount = tbl.querySelectorAll('thead th').length;
+                    const tb = tbl.querySelector('tbody');
+                    if (!tb || thCount !== cfg.columns.length) {
+                        hasValidStructure = false;
+                        return;
+                    }
+                    builtDataRowCount += tb.querySelectorAll('tr').length;
+                });
+
+                if (!hasValidStructure || builtDataRowCount !== expectedTotalRecords) {
+                    console.error('[ACM Print] Pre-print validation gagal.', {
+                        moduleKey: moduleKey,
+                        eventCode: eventCode,
+                        gender: normalizedGender,
+                        tableCount: builtTables.length,
+                        expectedTotalRecords: expectedTotalRecords,
+                        builtDataRowCount: builtDataRowCount
+                    });
+                    cleanupPrintSheet();
+                    return;
+                }
+
+                isPrintInProgress = true;
+                printSheet.classList.remove('hidden');
                 document.body.classList.add('acm-print-active');
-                window.print();
-                setTimeout(function () {
-                    document.body.classList.remove('acm-print-active');
-                    printSheet.innerHTML = '';
-                }, 300);
+
+                // Tunggu DOM & layout selesai sebelum memanggil window.print()
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                        try {
+                            window.print();
+                        } catch (err) {
+                            console.error('[ACM Print] Ralat semasa memanggil window.print():', err);
+                            cleanupPrintSheet();
+                        }
+                    });
+                });
             }
 
             // =========================================================================
@@ -4125,7 +4341,7 @@
                 const yearEl = document.getElementById('header-tournament-year');
                 const countEl = document.getElementById('storage-record-count');
 
-                if (nameEl && settings && typeof settings.tournamentName === 'string' && settings.tournamentName.trim() !== '') {
+                if (nameEl && settings && typeof settings.tournamentName === 'string' && settings.tournamentName.trim() !== '' && settings.tournamentName.trim().toUpperCase() !== 'ATHLETICS CHAMPIONSHIP MANAGER') {
                     nameEl.textContent = settings.tournamentName.trim();
                 }
                 if (yearEl) {
@@ -4299,8 +4515,10 @@
             function bootstrapApp() {
                 initTheme();
                 initNavigationAndSidebar();
+                navigateToView('view-saringan');
                 syncHeaderFromStorage();
                 initGasIntegration();
+                window.addEventListener('afterprint', cleanupPrintSheet);
                 if (window.lucide && typeof window.lucide.createIcons === 'function') {
                     window.lucide.createIcons();
                 }
