@@ -296,14 +296,8 @@
                     </div>
                 </div>
 
-                <!-- Kanan Header: Penunjuk Status LocalStorage + Butang Tema -->
+                <!-- Kanan Header: Butang Tema -->
                 <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
-                    <!-- Penunjuk Status LocalStorage -->
-                    <div id="storage-status-badge" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300" title="Status Penyimpanan Pelayar Tempatan">
-                        <i data-lucide="hard-drive" class="w-3.5 h-3.5 text-emerald"></i>
-                        <span>LocalStorage: <strong id="storage-record-count" class="font-semibold text-navy-900 dark:text-white">Aktif (0 Rekod)</strong></span>
-                    </div>
-
                     <!-- Butang Pertukaran Tema (Light / Dark Mode) -->
                     <button id="btn-theme-toggle" aria-label="Tukar Tema Paparan" title="Tukar Mod Cerah / Gelap" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
                         <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-gold"></i>
@@ -4433,12 +4427,11 @@
                 });
             }
 
-            // Segerakkan maklumat header & status rekod LocalStorage tanpa mengubah data
+            // Segerakkan maklumat header daripada LocalStorage tanpa mengubah data
             function syncHeaderFromStorage() {
                 const settings = safeReadJson(STORAGE_KEYS.SETTINGS, {});
                 const nameEl = document.getElementById('header-tournament-name');
                 const yearEl = document.getElementById('header-tournament-year');
-                const countEl = document.getElementById('storage-record-count');
 
                 if (nameEl && settings && typeof settings.tournamentName === 'string' && settings.tournamentName.trim() !== '' && settings.tournamentName.trim().toUpperCase() !== 'ATHLETICS CHAMPIONSHIP MANAGER') {
                     nameEl.textContent = settings.tournamentName.trim();
@@ -4446,30 +4439,6 @@
                 if (yearEl) {
                     const yr = settings && settings.year ? String(settings.year).trim() : '';
                     yearEl.textContent = yr !== '' ? yr : '----';
-                }
-
-                let totalRecords = 0;
-                const collectionKeys = [
-                    STORAGE_KEYS.TEAMS,
-                    STORAGE_KEYS.CATEGORIES,
-                    STORAGE_KEYS.EVENTS,
-                    STORAGE_KEYS.ATHLETES,
-                    STORAGE_KEYS.HEAT_RESULTS,
-                    STORAGE_KEYS.FINAL_RESULTS,
-                    STORAGE_KEYS.RELAY_RESULTS,
-                    STORAGE_KEYS.FIELD_RESULTS,
-                    STORAGE_KEYS.RECORDS
-                ];
-
-                collectionKeys.forEach(function (k) {
-                    const data = safeReadJson(k, []);
-                    if (Array.isArray(data)) {
-                        totalRecords += data.length;
-                    }
-                });
-
-                if (countEl) {
-                    countEl.textContent = 'Aktif (' + totalRecords + ' Rekod)';
                 }
             }
 
